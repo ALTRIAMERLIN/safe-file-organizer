@@ -412,6 +412,31 @@ def test_A12_organized_link_refused(root, tmp_path):
         plan_of(root, classify="extension")
 
 
+def test_A12_target_on_different_volume_rejected_SIMULATED(root, monkeypatch):
+    """SIMULATED: no second local NTFS volume is available, so a folder's st_dev is faked.
+    (A real mounted folder is also a reparse point and is already rejected as a link.)"""
+    mk(root, {"a.txt": "1", "mnt/keep.txt": "2"})
+    mnt = os.path.normcase(os.path.join(root, "mnt"))
+    real_lstat = os.lstat
+
+    def fake_lstat(path, *a, **kw):
+        st = real_lstat(path, *a, **kw)
+        if os.path.normcase(os.fspath(path)).startswith(mnt):
+            seq = list(st[:10])
+            seq[2] = st.st_dev + 1  # st_dev
+            return os.stat_result(seq, {"st_file_attributes": getattr(st, "st_file_attributes", 0)})
+        return st
+
+    p = plan_of(root, prefix="")
+    retarget(p, {"a.txt": "mnt/a.txt"})
+    monkeypatch.setattr(os, "lstat", fake_lstat)
+    with pytest.raises(PreflightError) as e:
+        planner.validate_for_apply(p)
+    assert any("different volume" in x for x in e.value.problems)
+    monkeypatch.undo()
+    assert sorted(os.listdir(root)) == ["a.txt", "mnt"]
+
+
 def test_rules_strict_parsing():
     with pytest.raises(RuleError):
         Rules.from_dict({"regex": ".*"})
