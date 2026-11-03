@@ -79,3 +79,6 @@ Final test counts: 158 passed, 0 failed, 0 skipped (python -m pytest -q tests; 1
 
 Blocked items: none.
 Final test counts: 159 passed, 0 failed, 0 skipped (`python -m pytest -q tests`; 158 existing, 1 new). Single run, no Tk flake observed.
+
+## Stage 6 - A27 real UI run and portfolio materials
+A27 passed 15/15 machine checks on the real window (see docs/DELIVERY.md and docs/evidence/a27/A27_SUMMARY.md). Raw recording, finished video, cover and Upwork draft produced. Visual review of screenshots, video and cover not done. src/ unchanged. Tests: 159 passed.
