@@ -220,20 +220,25 @@ def _abs(root: str, rel: str) -> str:
 
 
 def _write_json_new(path: str, obj: Any) -> None:
-    """Write atomically (temp file + rename) so a crash never leaves a truncated run.json."""
+    """Create path atomically (reserve name, temp file, os.replace); needs no hardlink support."""
+    # Reserve the name first: O_EXCL raises FileExistsError if path exists, so an existing
+    # file is never touched. os.replace below can only replace the empty placeholder that
+    # this same call just reserved, never a pre-existing file.
+    os.close(os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY))
     tmp = path + ".tmp"
-    with open(tmp, "xb") as f:
-        f.write(json.dumps(obj, ensure_ascii=False, indent=1).encode("utf-8"))
-        f.flush()
-        os.fsync(f.fileno())
     try:
-        # os.link never overwrites on any platform: it raises FileExistsError if path exists.
-        os.link(tmp, path)
-    finally:
-        try:
-            os.remove(tmp)  # drop the temp name after publishing, or on any failure
-        except OSError:
-            pass
+        with open(tmp, "xb") as f:
+            f.write(json.dumps(obj, ensure_ascii=False, indent=1).encode("utf-8"))
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, path)
+    except BaseException:
+        for leftover in (tmp, path):  # path is the placeholder this call created
+            try:
+                os.remove(leftover)
+            except OSError:
+                pass
+        raise
 
 
 def _try_state(j: Journal, state: str, phase: str = "exec") -> None:

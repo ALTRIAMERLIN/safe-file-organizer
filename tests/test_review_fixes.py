@@ -213,16 +213,25 @@ def test_empty_run_json_without_intents_does_not_block_apply(root, st, tmp_path)
 
 def test_run_json_is_written_atomically(root, st, monkeypatch):
     mk(root, {"a.txt": "A"})
-    real_link = os.link
+    real_replace = os.replace
 
     def boom(src, dst):
         if str(src).endswith("run.json.tmp"):
             raise Crash()
-        return real_link(src, dst)
+        return real_replace(src, dst)
 
-    monkeypatch.setattr(runs.os, "link", boom)
+    monkeypatch.setattr(runs.os, "replace", boom)
     with pytest.raises(Crash):
         runs.apply_plan(plan_of(root, st, prefix="n_"), st)
     monkeypatch.undo()
     assert runs.list_runs(st, root) == []  # no run.json at all, never a truncated one
     assert runs.apply_plan(plan_of(root, st, prefix="m_"), st).state == "completed"
+
+
+def test_write_json_new_leaves_existing_file_untouched(tmp_path):
+    target = tmp_path / "run.json"
+    target.write_bytes(b'{"keep": "me"}')
+    with pytest.raises(FileExistsError):
+        runs._write_json_new(str(target), {"new": 1})
+    assert target.read_bytes() == b'{"keep": "me"}'
+    assert not (tmp_path / "run.json.tmp").exists()

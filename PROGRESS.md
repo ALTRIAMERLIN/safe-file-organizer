@@ -73,3 +73,9 @@ Final test counts: 158 passed, 0 failed, 0 skipped (`python -m pytest -q tests`;
 
 Blocked items: none.
 Final test counts: 158 passed, 0 failed, 0 skipped (python -m pytest -q tests; 158 existing, 0 new). One earlier run showed a random transient Tk/Tcl error in test_ui that did not reproduce in 3 reruns.
+
+## Entire review round 4 - fix summary
+1. + 2. [low] os.link publish of run.json required hardlink support (fails on FAT32/exFAT and some network shares). `_write_json_new` now reserves the name with `os.open(O_CREAT|O_EXCL|O_WRONLY)` (FileExistsError if it exists, existing file never touched), writes + fsyncs the temp file, then `os.replace(tmp, path)`, which can only replace the empty placeholder this call reserved. On any failure the temp file and that placeholder are removed and the error propagates. No hardlinks needed. The atomic-publish test now patches os.replace (same assertion: a crash leaves no run.json); new test: a pre-existing run.json stays byte-identical.
+
+Blocked items: none.
+Final test counts: 159 passed, 0 failed, 0 skipped (`python -m pytest -q tests`; 158 existing, 1 new). Single run, no Tk flake observed.
