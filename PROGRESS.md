@@ -20,4 +20,12 @@ docs/REQUIREMENTS.md, docs/DESIGN.md, docs/TASKS.md written from docs/SPEC.md be
 - Command: `python -m pytest -q tests` -> 101 passed.
 - Not verified: kill timing is limited to the three deterministic points (after intent / after move / after done); true power loss is out of scope by spec. Lock behaviour on network/cloud drives not tested (unsupported by spec).
 
-Latest result: 101 passed.
+## Stage 4 - CLI + tkinter UI (done)
+- `cli.py` / `__main__.py`: `plan ROOT --rules --out`, `apply PLAN --yes`, `history --root [--json]`, `undo RUN_ID --yes`, `recover --root`, `ui`. Exit codes 0/2/3/1; unexpected errors print one line (traceback only with `--debug`).
+- `ui.py`: four areas (Folder & Rules, Preview, Results, History & Undo). A `Controller` holds the preview generation counter: any rule/folder edit drops the preview and disables Apply; a scan that finishes after an edit is discarded. Work runs on a non-daemon thread; while busy all inputs and action buttons are disabled and closing is refused. No force-cancel button. Opening a folder runs the interrupted-run check (moves nothing) and lists runs needing review.
+- Tests: `tests/test_cli.py` (15, real subprocess CLI) and `tests/test_ui.py` (22, real Tk widgets; only the confirm/message dialogs are replaced by recorders).
+- Mutation check: disabling invalidation and the conflict check in `ui.py` made 10 A14 tests fail; original restored.
+- Command: `python -m pytest -q tests` -> 138 passed.
+- Not verified in this stage: A27 (a person operating the real window, plus screenshots) belongs to the stage 6 material and was not done. The UI tests drive real widgets but do not click native dialogs (folder picker, confirm box, save dialog).
+
+Latest result: 138 passed.
