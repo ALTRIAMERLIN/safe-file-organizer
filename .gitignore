@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.venv-clean/
+*.egg-info/
+build-err.txt
+build-log.txt
+demo_workspace/
+test-artifacts/
