@@ -60,3 +60,10 @@ Latest result: 139 passed (clean install, commit 3529669).
 
 Blocked items: none. No existing test expectations were changed.
 Final test counts: 155 passed, 0 failed, 0 skipped (`python -m pytest -q tests`; 139 existing + 16 new).
+
+## Entire review round 2 - fix summary (review/v1.0 @ 74d7f72)
+1. + 3. `undo_run` ignored `BrokenRun` (empty `done_ops`), so a corrupt newest run let an older run be restored: fixed. `undo_run` now refuses while any unreadable run exists for the root (same scope as apply, including unknown-root runs); an unreadable run id given explicitly also raises `PreflightError`. Regression test calls `undo_run` against a corrupt newest run and checks the older run was not restored.
+2. Empty/truncated `run.json` leftover blocked apply for every root: fixed two ways. `run.json` is now written atomically (temp file + rename, temp removed on failure), and `list_runs` ignores an unreadable run folder whose journal has no `intent` event (nothing was moved). Tests: empty run.json without journal does not block apply for any root; atomic-write crash leaves no run.json.
+
+Blocked items: none. No existing test expectations were changed (3 tests appended).
+Final test counts: 158 passed, 0 failed, 0 skipped (`python -m pytest -q tests`; 155 existing + 3 new).

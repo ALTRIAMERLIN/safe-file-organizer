@@ -170,6 +170,8 @@ def list_runs(state: State, root: str | None = None) -> list[Run]:
         try:
             r = Run(d)
         except (OSError, ValueError, KeyError, TypeError, IndexError, PreflightError) as e:
+            if not any(ev.get("type") == "intent" for ev in read_events(os.path.join(d, "journal.jsonl"))):
+                continue  # no intent was ever journaled: nothing was moved, so nothing needs review
             r = BrokenRun(d, str(e) or type(e).__name__)  # unknown root: shown for every root
             if r.root is not None and rid is not None and root_id(r.root) != rid:
                 continue
@@ -218,10 +220,20 @@ def _abs(root: str, rel: str) -> str:
 
 
 def _write_json_new(path: str, obj: Any) -> None:
-    with open(path, "xb") as f:
+    """Write atomically (temp file + rename) so a crash never leaves a truncated run.json."""
+    tmp = path + ".tmp"
+    with open(tmp, "xb") as f:
         f.write(json.dumps(obj, ensure_ascii=False, indent=1).encode("utf-8"))
         f.flush()
         os.fsync(f.fileno())
+    try:
+        os.rename(tmp, path)  # fails if path exists on Windows; never overwrites
+    except OSError:
+        try:
+            os.remove(tmp)
+        except OSError:
+            pass
+        raise
 
 
 def _try_state(j: Journal, state: str, phase: str = "exec") -> None:
@@ -312,7 +324,7 @@ def dt_id() -> str:
 def _discard_empty_run(run_dir: str) -> None:
     """Remove a run directory we created that holds no useful data (only run.json/journal)."""
     try:
-        for n in ("run.json", "journal.jsonl"):
+        for n in ("run.json", "run.json.tmp", "journal.jsonl"):
             p = os.path.join(run_dir, n)
             if os.path.isfile(p):
                 os.remove(p)
@@ -500,12 +512,22 @@ def undo_run(state: State, run_id: str | None = None, root: str | None = None,
              hooks: Hooks | None = None) -> RunResult:
     hooks = hooks or Hooks()
     if run_id:
-        root = find_run(state, run_id).root
+        try:
+            root = find_run(state, run_id).root
+        except (OSError, ValueError, KeyError, TypeError, IndexError) as e:
+            raise PreflightError(f"Run {run_id} cannot be read ({e}). Inspect its run folder by hand, "
+                                 "or undo by root once the broken run is removed.") from e
     if not root:
         raise PreflightError("Specify a run id or a root folder to undo.")
     root = names.check_root_dir(root)
     with state.lock(root):
         _recover_root(state, root, hooks)
+        broken = [r for r in list_runs(state, root) if getattr(r, "broken", False)]
+        if broken:
+            raise PreflightError(
+                f"Run {broken[-1].run_id} cannot be read, so the most recent run cannot be identified. "
+                "Undo is refused until it is reviewed. Run 'recover' for details, inspect or remove "
+                "the run folder by hand, then retry.")
         runs = [r for r in list_runs(state, root) if r.done_ops]
         pending = [r for r in runs if r.state != "undone"]
         if run_id:

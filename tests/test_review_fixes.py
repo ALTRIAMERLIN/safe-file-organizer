@@ -180,3 +180,49 @@ def test_csv_export_leaves_normal_cells_unchanged(root, tmp_path, st):
     with open(out, encoding="utf-8-sig", newline="") as f:
         rows = list(csv.reader(f))
     assert rows[1][0] == "a.txt" and rows[1][1] == "n_a.txt"
+
+
+# ---- round 2: undo refuses on a broken run; harmless leftovers do not block
+def test_undo_refuses_while_newest_run_is_corrupt(root, st):
+    mk(root, {"a.txt": "A"})
+    runs.apply_plan(plan_of(root, st, prefix="n_"), st)  # older, healthy run
+    mk(root, {"b.txt": "B"})
+    runs.apply_plan(plan_of(root, st, prefix="m_"), st)  # newest run
+    newest = runs.list_runs(st, root)[-1]
+    with open(os.path.join(newest.dir, "run.json"), "wb") as f:
+        f.write(b"{ not json")
+    before = sorted(os.listdir(root))
+    with pytest.raises(PreflightError, match="cannot be read"):
+        runs.undo_run(st, root=root)
+    assert sorted(os.listdir(root)) == before  # the older run was NOT restored
+
+
+def test_empty_run_json_without_intents_does_not_block_apply(root, st, tmp_path):
+    leftover = os.path.join(st.runs_dir, "20260101T000000000000-abcdef")
+    os.makedirs(leftover)
+    open(os.path.join(leftover, "run.json"), "wb").close()  # empty, no journal
+    mk(root, {"a.txt": "A"})
+    assert runs.list_runs(st, root) == []
+    res = runs.apply_plan(plan_of(root, st, prefix="n_"), st)
+    assert res.state == "completed"
+    other = str(tmp_path / "other")
+    os.makedirs(other)
+    mk(other, {"z.txt": "Z"})
+    assert runs.apply_plan(plan_of(other, st, prefix="n_"), st).state == "completed"
+
+
+def test_run_json_is_written_atomically(root, st, monkeypatch):
+    mk(root, {"a.txt": "A"})
+    real_rename = os.rename
+
+    def boom(src, dst):
+        if str(src).endswith("run.json.tmp"):
+            raise Crash()
+        return real_rename(src, dst)
+
+    monkeypatch.setattr(runs.os, "rename", boom)
+    with pytest.raises(Crash):
+        runs.apply_plan(plan_of(root, st, prefix="n_"), st)
+    monkeypatch.undo()
+    assert runs.list_runs(st, root) == []  # no run.json at all, never a truncated one
+    assert runs.apply_plan(plan_of(root, st, prefix="m_"), st).state == "completed"
