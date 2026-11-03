@@ -213,14 +213,14 @@ def test_empty_run_json_without_intents_does_not_block_apply(root, st, tmp_path)
 
 def test_run_json_is_written_atomically(root, st, monkeypatch):
     mk(root, {"a.txt": "A"})
-    real_rename = os.rename
+    real_link = os.link
 
     def boom(src, dst):
         if str(src).endswith("run.json.tmp"):
             raise Crash()
-        return real_rename(src, dst)
+        return real_link(src, dst)
 
-    monkeypatch.setattr(runs.os, "rename", boom)
+    monkeypatch.setattr(runs.os, "link", boom)
     with pytest.raises(Crash):
         runs.apply_plan(plan_of(root, st, prefix="n_"), st)
     monkeypatch.undo()

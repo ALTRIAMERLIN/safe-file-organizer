@@ -67,3 +67,9 @@ Final test counts: 155 passed, 0 failed, 0 skipped (`python -m pytest -q tests`;
 
 Blocked items: none. No existing test expectations were changed (3 tests appended).
 Final test counts: 158 passed, 0 failed, 0 skipped (`python -m pytest -q tests`; 155 existing + 3 new).
+
+## Entire review round 3 - fix summary
+1. [low] runs.py run.json publish: the comment claimed no-overwrite, but os.rename replaces the target on POSIX. The publish now uses os.link(tmp, path), which raises FileExistsError if the target exists on every platform, then removes the temp file (also on any failure). The atomic-write test now patches os.link instead of os.rename; its assertion (a crash during publish leaves no run.json) is unchanged.
+
+Blocked items: none.
+Final test counts: 158 passed, 0 failed, 0 skipped (python -m pytest -q tests; 158 existing, 0 new). One earlier run showed a random transient Tk/Tcl error in test_ui that did not reproduce in 3 reruns.

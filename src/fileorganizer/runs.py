@@ -227,13 +227,13 @@ def _write_json_new(path: str, obj: Any) -> None:
         f.flush()
         os.fsync(f.fileno())
     try:
-        os.rename(tmp, path)  # fails if path exists on Windows; never overwrites
-    except OSError:
+        # os.link never overwrites on any platform: it raises FileExistsError if path exists.
+        os.link(tmp, path)
+    finally:
         try:
-            os.remove(tmp)
+            os.remove(tmp)  # drop the temp name after publishing, or on any failure
         except OSError:
             pass
-        raise
 
 
 def _try_state(j: Journal, state: str, phase: str = "exec") -> None:
