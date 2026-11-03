@@ -14,7 +14,7 @@ from dataclasses import dataclass, field
 from typing import Any, Callable
 
 from . import names, planner
-from .errors import ExecutionError, JournalError, PreflightError
+from .errors import JournalError, PreflightError
 from .planner import Plan, PlanItem
 from .state import Journal, State, now_iso, read_events, root_id
 
@@ -110,6 +110,54 @@ class Run:
         }
 
 
+class BrokenRun:
+    """A run directory whose run.json cannot be read. Surfaced as needs_review, never hidden."""
+
+    broken = True
+
+    def __init__(self, directory: str, error: str):
+        self.dir = directory
+        self.run_id = os.path.basename(directory)
+        self.error = error
+        self.root = _guess_root(directory)
+        self.state = "needs_review"
+        self.phase = "exec"
+        self.ops: list[PlanItem] = []
+        self.exec: dict[int, str] = {}
+        self.undo: dict[int, str] = {}
+        self.mkdirs: list[str] = []
+        self.notes: dict[tuple[str, int], str] = {}
+
+    @property
+    def journal_path(self) -> str:
+        return os.path.join(self.dir, "journal.jsonl")
+
+    @property
+    def done_ops(self) -> list[int]:
+        return []
+
+    @property
+    def remaining_undo_ops(self) -> list[int]:
+        return []
+
+    def refresh(self) -> None:
+        pass
+
+    def summary(self) -> dict[str, Any]:
+        return {"run_id": self.run_id, "root": self.root, "state": self.state, "created_at": None,
+                "plan_id": None, "operations": 0, "moved": 0, "restored": 0, "error": self.error}
+
+
+def _guess_root(directory: str) -> str | None:
+    """Best effort: the root recorded in a damaged run.json, or None when unknown."""
+    try:
+        with open(os.path.join(directory, "run.json"), "rb") as f:
+            root = json.loads(f.read().decode("utf-8")).get("root")
+        return root if isinstance(root, str) else None
+    except (OSError, ValueError, AttributeError):
+        return None
+
+
 def list_runs(state: State, root: str | None = None) -> list[Run]:
     out: list[Run] = []
     if not os.path.isdir(state.runs_dir):
@@ -121,7 +169,11 @@ def list_runs(state: State, root: str | None = None) -> list[Run]:
             continue
         try:
             r = Run(d)
-        except (OSError, ValueError, KeyError, PreflightError):
+        except (OSError, ValueError, KeyError, TypeError, IndexError, PreflightError) as e:
+            r = BrokenRun(d, str(e) or type(e).__name__)  # unknown root: shown for every root
+            if r.root is not None and rid is not None and root_id(r.root) != rid:
+                continue
+            out.append(r)
             continue
         if rid is None or root_id(r.root) == rid:
             out.append(r)
@@ -351,6 +403,8 @@ def recover(state: State, root: str, hooks: Hooks | None = None) -> list[Run]:
 def _recover_root(state: State, root: str, hooks: Hooks) -> list[Run]:
     changed: list[Run] = []
     for r in list_runs(state, root):
+        if getattr(r, "broken", False):
+            continue  # nothing to reconcile; stays needs_review until fixed by hand
         if r.state in UNRESOLVED or r.state == "needs_review":
             if _reconcile(r, root, hooks):
                 changed.append(r)
@@ -360,15 +414,15 @@ def _recover_root(state: State, root: str, hooks: Hooks) -> list[Run]:
 def _reconcile(r: Run, root: str, hooks: Hooks) -> bool:
     j = hooks.journal_factory(r.journal_path).open()
     try:
+        changed = False
         prev = r.state
         phase = r.phase if prev in ("undo_running", "needs_review", "interrupted") else "exec"
-        if prev == "undo_running":
-            phase = "undo"
         if prev in ("planned", "running", "undo_running"):
             j.append({"type": "state", "state": "interrupted", "phase": phase})
+            changed = True
         status = r.undo if phase == "undo" else r.exec
         review = False
-        for i in sorted(k for k, s in status.items() if s in ("intent", "review")):
+        for i, s in sorted((k, s) for k, s in status.items() if s in ("intent", "review")):
             it = r.ops[i]
             src, dst = _abs(root, it.src), _abs(root, it.dst)
             s_exists, d_exists = os.path.lexists(src), os.path.lexists(dst)
@@ -381,8 +435,10 @@ def _reconcile(r: Run, root: str, hooks: Hooks) -> bool:
                     j.append({"type": "failed", "op": i, "error": "recovered: the move did not happen"})
                 else:
                     review = True
-                    j.append({"type": "review", "phase": "exec", "op": i,
-                              "reason": _ambiguity(s_exists, d_exists, src_ok, dst_ok)})
+                    reason = _ambiguity(s_exists, d_exists, src_ok, dst_ok)
+                    if not (s == "review" and r.notes.get(("exec", i)) == reason):
+                        j.append({"type": "review", "phase": "exec", "op": i, "reason": reason})
+                        changed = True
             else:
                 if src_ok and not d_exists:
                     j.append({"type": "undo_done", "op": i, "recovered": True})
@@ -390,8 +446,10 @@ def _reconcile(r: Run, root: str, hooks: Hooks) -> bool:
                     j.append({"type": "undo_failed", "op": i, "error": "recovered: the restore did not happen"})
                 else:
                     review = True
-                    j.append({"type": "review", "phase": "undo", "op": i,
-                              "reason": _ambiguity(s_exists, d_exists, src_ok, dst_ok)})
+                    reason = _ambiguity(s_exists, d_exists, src_ok, dst_ok)
+                    if not (s == "review" and r.notes.get(("undo", i)) == reason):
+                        j.append({"type": "review", "phase": "undo", "op": i, "reason": reason})
+                        changed = True
         r.refresh()
         if review or any(s == "review" for s in (r.undo if phase == "undo" else r.exec).values()):
             final = "needs_review"
@@ -399,10 +457,13 @@ def _reconcile(r: Run, root: str, hooks: Hooks) -> bool:
             final = "undone" if not r.remaining_undo_ops else "undo_partial_failed"
         else:
             final = "completed" if len(r.done_ops) == len(r.ops) else "partial_failed"
+        if final == "undone":
+            _remove_created_dirs(root, r, j)  # an interrupted undo must not leave created folders behind
         if final != r.state:
             j.append({"type": "state", "state": final, "phase": phase})
+            changed = True
         r.refresh()
-        return True
+        return changed
     finally:
         j.close()
 
@@ -417,6 +478,9 @@ def _ambiguity(s_exists: bool, d_exists: bool, src_ok: bool, dst_ok: bool) -> st
 
 def review_report(r: Run) -> list[str]:
     lines = []
+    if getattr(r, "broken", False):
+        return [f"Run {r.run_id}: its run.json cannot be read ({r.error}). Inspect the folder {r.dir} "
+                "and the files under the root by hand; remove or repair the run folder when done."]
     for (phase, i), note in sorted(r.notes.items(), key=lambda kv: (kv[0][0], kv[0][1])):
         status = (r.undo if phase == "undo" else r.exec).get(i)
         if status == "review":
