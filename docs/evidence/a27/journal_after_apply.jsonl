@@ -1,0 +1,87 @@
+{"seq":1,"t":"2026-11-03T20:46:53.397081+00:00","type":"state","state":"planned","phase":"exec"}
+{"seq":2,"t":"2026-11-03T20:46:53.397580+00:00","type":"state","state":"running","phase":"exec"}
+{"seq":3,"t":"2026-11-03T20:46:53.398581+00:00","type":"mkdir","stage":"intent","path":"Organized"}
+{"seq":4,"t":"2026-11-03T20:46:53.399081+00:00","type":"mkdir","stage":"done","path":"Organized"}
+{"seq":5,"t":"2026-11-03T20:46:53.399581+00:00","type":"mkdir","stage":"intent","path":"Organized/csv"}
+{"seq":6,"t":"2026-11-03T20:46:53.400081+00:00","type":"mkdir","stage":"done","path":"Organized/csv"}
+{"seq":7,"t":"2026-11-03T20:46:53.400081+00:00","type":"intent","op":0,"src":"misc files/data.v1.csv","dst":"Organized/csv/Doc_data.v1_001.csv"}
+{"seq":8,"t":"2026-11-03T20:46:53.400581+00:00","type":"done","op":0}
+{"seq":9,"t":"2026-11-03T20:46:53.402082+00:00","type":"mkdir","stage":"intent","path":"Organized/pdf"}
+{"seq":10,"t":"2026-11-03T20:46:53.402582+00:00","type":"mkdir","stage":"done","path":"Organized/pdf"}
+{"seq":11,"t":"2026-11-03T20:46:53.402582+00:00","type":"intent","op":1,"src":"misc files/empty.pdf","dst":"Organized/pdf/Doc_empty_002.pdf"}
+{"seq":12,"t":"2026-11-03T20:46:53.403080+00:00","type":"done","op":1}
+{"seq":13,"t":"2026-11-03T20:46:53.404581+00:00","type":"mkdir","stage":"intent","path":"Organized/jpg"}
+{"seq":14,"t":"2026-11-03T20:46:53.405083+00:00","type":"mkdir","stage":"done","path":"Organized/jpg"}
+{"seq":15,"t":"2026-11-03T20:46:53.405083+00:00","type":"intent","op":2,"src":"misc files/IMG_0001.jpg","dst":"Organized/jpg/Doc_IMG_0001_003.jpg"}
+{"seq":16,"t":"2026-11-03T20:46:53.405584+00:00","type":"done","op":2}
+{"seq":17,"t":"2026-11-03T20:46:53.407085+00:00","type":"intent","op":3,"src":"misc files/invoice_jan.pdf","dst":"Organized/pdf/Doc_invoice_jan_004.pdf"}
+{"seq":18,"t":"2026-11-03T20:46:53.407085+00:00","type":"done","op":3}
+{"seq":19,"t":"2026-11-03T20:46:53.408584+00:00","type":"intent","op":4,"src":"misc files/logo.jpg","dst":"Organized/jpg/Doc_logo_005.jpg"}
+{"seq":20,"t":"2026-11-03T20:46:53.409084+00:00","type":"done","op":4}
+{"seq":21,"t":"2026-11-03T20:46:53.410084+00:00","type":"mkdir","stage":"intent","path":"Organized/no_extension"}
+{"seq":22,"t":"2026-11-03T20:46:53.410584+00:00","type":"mkdir","stage":"done","path":"Organized/no_extension"}
+{"seq":23,"t":"2026-11-03T20:46:53.410584+00:00","type":"intent","op":5,"src":"misc files/Makefile","dst":"Organized/no_extension/Doc_Makefile_006"}
+{"seq":24,"t":"2026-11-03T20:46:53.411085+00:00","type":"done","op":5}
+{"seq":25,"t":"2026-11-03T20:46:53.412585+00:00","type":"intent","op":6,"src":"misc files/manual.pdf","dst":"Organized/pdf/Doc_manual_007.pdf"}
+{"seq":26,"t":"2026-11-03T20:46:53.413084+00:00","type":"done","op":6}
+{"seq":27,"t":"2026-11-03T20:46:53.414084+00:00","type":"intent","op":7,"src":"misc files/notes","dst":"Organized/no_extension/Doc_notes_008"}
+{"seq":28,"t":"2026-11-03T20:46:53.414584+00:00","type":"done","op":7}
+{"seq":29,"t":"2026-11-03T20:46:53.416083+00:00","type":"mkdir","stage":"intent","path":"Organized/txt"}
+{"seq":30,"t":"2026-11-03T20:46:53.417084+00:00","type":"mkdir","stage":"done","path":"Organized/txt"}
+{"seq":31,"t":"2026-11-03T20:46:53.417084+00:00","type":"intent","op":8,"src":"misc files/notes.txt","dst":"Organized/txt/Doc_notes_009.txt"}
+{"seq":32,"t":"2026-11-03T20:46:53.417583+00:00","type":"done","op":8}
+{"seq":33,"t":"2026-11-03T20:46:53.419083+00:00","type":"intent","op":9,"src":"misc files/readme.txt","dst":"Organized/txt/Doc_readme_010.txt"}
+{"seq":34,"t":"2026-11-03T20:46:53.419583+00:00","type":"done","op":9}
+{"seq":35,"t":"2026-11-03T20:46:53.420586+00:00","type":"intent","op":10,"src":"misc files/sales.csv","dst":"Organized/csv/Doc_sales_011.csv"}
+{"seq":36,"t":"2026-11-03T20:46:53.421089+00:00","type":"done","op":10}
+{"seq":37,"t":"2026-11-03T20:46:53.422089+00:00","type":"intent","op":11,"src":"misc files/todo list.txt","dst":"Organized/txt/Doc_todo list_012.txt"}
+{"seq":38,"t":"2026-11-03T20:46:53.422589+00:00","type":"done","op":11}
+{"seq":39,"t":"2026-11-03T20:46:53.424089+00:00","type":"intent","op":12,"src":"misc files/笔记.txt","dst":"Organized/txt/Doc_笔记_013.txt"}
+{"seq":40,"t":"2026-11-03T20:46:53.424589+00:00","type":"done","op":12}
+{"seq":41,"t":"2026-11-03T20:46:53.425589+00:00","type":"intent","op":13,"src":"photos 照片/captions.txt","dst":"Organized/txt/Doc_captions_014.txt"}
+{"seq":42,"t":"2026-11-03T20:46:53.426089+00:00","type":"done","op":13}
+{"seq":43,"t":"2026-11-03T20:46:53.427089+00:00","type":"intent","op":14,"src":"photos 照片/empty_photo.jpg","dst":"Organized/jpg/Doc_empty_photo_015.jpg"}
+{"seq":44,"t":"2026-11-03T20:46:53.427589+00:00","type":"done","op":14}
+{"seq":45,"t":"2026-11-03T20:46:53.428589+00:00","type":"intent","op":15,"src":"photos 照片/IMG_0001.jpg","dst":"Organized/jpg/Doc_IMG_0001_016.jpg"}
+{"seq":46,"t":"2026-11-03T20:46:53.429089+00:00","type":"done","op":15}
+{"seq":47,"t":"2026-11-03T20:46:53.430089+00:00","type":"intent","op":16,"src":"photos 照片/IMG_0002.JPG","dst":"Organized/jpg/Doc_IMG_0002_017.JPG"}
+{"seq":48,"t":"2026-11-03T20:46:53.430590+00:00","type":"done","op":16}
+{"seq":49,"t":"2026-11-03T20:46:53.432089+00:00","type":"intent","op":17,"src":"photos 照片/index.csv","dst":"Organized/csv/Doc_index_018.csv"}
+{"seq":50,"t":"2026-11-03T20:46:53.432589+00:00","type":"done","op":17}
+{"seq":51,"t":"2026-11-03T20:46:53.434089+00:00","type":"intent","op":18,"src":"photos 照片/README","dst":"Organized/no_extension/Doc_README_019"}
+{"seq":52,"t":"2026-11-03T20:46:53.435089+00:00","type":"done","op":18}
+{"seq":53,"t":"2026-11-03T20:46:53.436089+00:00","type":"intent","op":19,"src":"photos 照片/readme.txt","dst":"Organized/txt/Doc_readme_020.txt"}
+{"seq":54,"t":"2026-11-03T20:46:53.436589+00:00","type":"done","op":19}
+{"seq":55,"t":"2026-11-03T20:46:53.438089+00:00","type":"intent","op":20,"src":"photos 照片/receipt.pdf","dst":"Organized/pdf/Doc_receipt_021.pdf"}
+{"seq":56,"t":"2026-11-03T20:46:53.438589+00:00","type":"done","op":20}
+{"seq":57,"t":"2026-11-03T20:46:53.439589+00:00","type":"intent","op":21,"src":"photos 照片/scan 01.pdf","dst":"Organized/pdf/Doc_scan 01_022.pdf"}
+{"seq":58,"t":"2026-11-03T20:46:53.440089+00:00","type":"done","op":21}
+{"seq":59,"t":"2026-11-03T20:46:53.441589+00:00","type":"intent","op":22,"src":"photos 照片/team.photo.jpg","dst":"Organized/jpg/Doc_team.photo_023.jpg"}
+{"seq":60,"t":"2026-11-03T20:46:53.441589+00:00","type":"done","op":22}
+{"seq":61,"t":"2026-11-03T20:46:53.443090+00:00","type":"intent","op":23,"src":"photos 照片/旅行 照片.jpg","dst":"Organized/jpg/Doc_旅行 照片_024.jpg"}
+{"seq":62,"t":"2026-11-03T20:46:53.443589+00:00","type":"done","op":23}
+{"seq":63,"t":"2026-11-03T20:46:53.444589+00:00","type":"intent","op":24,"src":"reports/annual.report.v2.pdf","dst":"Organized/pdf/Doc_annual.report.v2_025.pdf"}
+{"seq":64,"t":"2026-11-03T20:46:53.445089+00:00","type":"done","op":24}
+{"seq":65,"t":"2026-11-03T20:46:53.446589+00:00","type":"intent","op":25,"src":"reports/budget.pdf","dst":"Organized/pdf/Doc_budget_026.pdf"}
+{"seq":66,"t":"2026-11-03T20:46:53.446589+00:00","type":"done","op":25}
+{"seq":67,"t":"2026-11-03T20:46:53.448090+00:00","type":"intent","op":26,"src":"reports/chart.jpg","dst":"Organized/jpg/Doc_chart_027.jpg"}
+{"seq":68,"t":"2026-11-03T20:46:53.448590+00:00","type":"done","op":26}
+{"seq":69,"t":"2026-11-03T20:46:53.450089+00:00","type":"intent","op":27,"src":"reports/costs.csv","dst":"Organized/csv/Doc_costs_028.csv"}
+{"seq":70,"t":"2026-11-03T20:46:53.450589+00:00","type":"done","op":27}
+{"seq":71,"t":"2026-11-03T20:46:53.452089+00:00","type":"intent","op":28,"src":"reports/invoice_feb.pdf","dst":"Organized/pdf/Doc_invoice_feb_029.pdf"}
+{"seq":72,"t":"2026-11-03T20:46:53.452588+00:00","type":"done","op":28}
+{"seq":73,"t":"2026-11-03T20:46:53.453589+00:00","type":"intent","op":29,"src":"reports/invoice_jan.pdf","dst":"Organized/pdf/Doc_invoice_jan_030.pdf"}
+{"seq":74,"t":"2026-11-03T20:46:53.454089+00:00","type":"done","op":29}
+{"seq":75,"t":"2026-11-03T20:46:53.455592+00:00","type":"intent","op":30,"src":"reports/LICENSE","dst":"Organized/no_extension/Doc_LICENSE_031"}
+{"seq":76,"t":"2026-11-03T20:46:53.456092+00:00","type":"done","op":30}
+{"seq":77,"t":"2026-11-03T20:46:53.457591+00:00","type":"intent","op":31,"src":"reports/notes.txt","dst":"Organized/txt/Doc_notes_032.txt"}
+{"seq":78,"t":"2026-11-03T20:46:53.457591+00:00","type":"done","op":31}
+{"seq":79,"t":"2026-11-03T20:46:53.459091+00:00","type":"intent","op":32,"src":"reports/sales.csv","dst":"Organized/csv/Doc_sales_033.csv"}
+{"seq":80,"t":"2026-11-03T20:46:53.459591+00:00","type":"done","op":32}
+{"seq":81,"t":"2026-11-03T20:46:53.461091+00:00","type":"intent","op":33,"src":"reports/summary.txt","dst":"Organized/txt/Doc_summary_034.txt"}
+{"seq":82,"t":"2026-11-03T20:46:53.461091+00:00","type":"done","op":33}
+{"seq":83,"t":"2026-11-03T20:46:53.462592+00:00","type":"intent","op":34,"src":"reports/合同 草稿.pdf","dst":"Organized/pdf/Doc_合同 草稿_035.pdf"}
+{"seq":84,"t":"2026-11-03T20:46:53.463093+00:00","type":"done","op":34}
+{"seq":85,"t":"2026-11-03T20:46:53.464595+00:00","type":"intent","op":35,"src":"reports/客户 名单.csv","dst":"Organized/csv/Doc_客户 名单_036.csv"}
+{"seq":86,"t":"2026-11-03T20:46:53.465092+00:00","type":"done","op":35}
+{"seq":87,"t":"2026-11-03T20:46:53.466093+00:00","type":"state","state":"completed","phase":"exec"}

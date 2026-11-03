@@ -1,0 +1,108 @@
+{
+  "checks": [
+    {
+      "step": "03",
+      "check": "conflict fixture untouched",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "step": "03",
+      "check": "no run created by a blocked preview",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "step": "04",
+      "check": "preview moved nothing",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "step": "04",
+      "check": "no run before Apply",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "step": "05",
+      "check": "confirm box title",
+      "result": "pass",
+      "detail": "Confirm Apply"
+    },
+    {
+      "step": "06",
+      "check": "36 targets exist, 36 sources gone",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "step": "06",
+      "check": "targets carry the original SHA-256",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "step": "06",
+      "check": "exactly one run dir",
+      "result": "pass",
+      "detail": "['20261103T204653395580-49c498']"
+    },
+    {
+      "step": "06",
+      "check": "journal: 36 intent + 36 done",
+      "result": "pass",
+      "detail": "intent=36 done=36"
+    },
+    {
+      "step": "06",
+      "check": "journal last state completed",
+      "result": "pass",
+      "detail": "{'seq': 87, 't': '2026-11-03T20:46:53.466093+00:00', 'type': 'state', 'state': 'completed', 'phase': 'exec'}"
+    },
+    {
+      "step": "07",
+      "check": "confirm box title",
+      "result": "pass",
+      "detail": "Confirm Undo"
+    },
+    {
+      "step": "08",
+      "check": "all files back at original paths with original SHA-256",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "step": "08",
+      "check": "Organized folder removed",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "step": "08",
+      "check": "journal: 36 undo_intent + 36 undo_done",
+      "result": "pass",
+      "detail": "undo_intent=36 undo_done=36"
+    },
+    {
+      "step": "08",
+      "check": "journal last state undone",
+      "result": "pass",
+      "detail": ""
+    }
+  ],
+  "screenshots": [
+    "01_launch.png",
+    "02_folder_dialog.png",
+    "03_conflict_blocked.png",
+    "04_demo_preview.png",
+    "05_confirm_apply.png",
+    "06_applied.png",
+    "07_confirm_undo.png",
+    "08_undone.png"
+  ],
+  "run_id": "20261103T204653395580-49c498",
+  "ui_seconds": 58.5,
+  "passed": 15,
+  "failed": 0
+}
