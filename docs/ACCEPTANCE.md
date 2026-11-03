@@ -38,13 +38,13 @@
 | A24 | 通过 | test_A24_lock_excludes_second_holder_in_process, test_A24_two_processes_only_one_executes, test_A24_lock_released_when_process_killed, test_A24_lock_is_per_root, test_A24_threads_double_submit_moves_once | 两个**真实进程**竞争：持锁进程停在执行中途时，第二个进程的 apply 和 undo 都返回 2，最终只有 1 个 run；持锁进程被杀后锁自动释放（`msvcrt.locking`，不是靠锁文件是否存在）；4 个线程同时提交只完成 1 次。网络盘或云盘上的锁行为没有测试（规格不支持） |
 | A25 | 通过 | test_cli::test_A25_* ×14, test_ui::test_A25_cli_and_ui_same_mapping_and_result | 对两个相同的演示目录，CLI 和 UI 生成的映射和规则相同，执行后的树相同，run 状态和 done 集合也相同；退出码：0（plan/apply/undo/无变更），2（缺 --yes、未知命令、目录/计划/run 不存在、坏规则、输出在源目录内、被篡改的计划、锁占用、被阻止的计划、needs_review 时的新任务），3（真实占用导致的部分失败、needs_review），1（模拟 bug，stderr 中没有 Traceback）。所有子进程调用都断言 stderr 不含 "Traceback" |
 | A26 | 通过 | 见 `docs/TEST_REPORT.md` | 新目录 `git clone` → 新 venv → `pip install .` → `pip install -r requirements-dev.txt` → 139/0/0；入口 `fileorganizer.exe` 可以运行；`tools/run_demo_check.py` 用已安装的包跑主演示，17/17 通过（预览 36 ready/0 conflict → 执行 36 → 日志 36+36 → 撤销 36 → 树和 SHA-256 全部还原 → 冲突 fixture 被阻止且没有改动）。已记录 Windows/Python/依赖版本和提交 SHA。说明：构建后端 setuptools 的具体版本没有记录 |
-| A27 | **未验证** | — | 需要**人工**操作真实界面（选择→预览→执行→撤销），并且截图与日志、磁盘状态核对一致。这属于阶段 6 素材，本轮按 TASK.md 不做。已有的相关自动化证据：`test_ui::test_ui_demo_main_flow_preview_apply_history_undo` 在真实 Tk 窗口中驱动控件完成 36 文件的预览→执行→历史→撤销并核对 SHA-256，但它不点击原生对话框、没有截图，不能替代 A27 |
+| A27 | **通过（机器核对）** | `tools/a27_ui_run.py` | 真实 tkinter 窗口，SendInput 真实点击与键盘，原生文件夹选择框与确认框；演示副本 + 冲突夹具，FILEORGANIZER_STATE_DIR 指向临时目录。选目录、按扩展名分类、预览、应用、撤销。15/15 项磁盘与日志核对通过（应用后 36 目标存在且 SHA-256 一致、日志 36 intent + 36 done；撤销后树与 SHA-256 与原始一致、日志 36 undo_intent + 36 undo_done；冲突夹具未改动）。 | `docs/evidence/a27/`（8 张截图、a27_checks.json、两份日志、A27_SUMMARY.md）。**限制**：本轮未以目视方式逐张核对截图（此前两次读取图片时网络报错），截图与日志的目视比对不作声明，结论只依据机器核对。 |
 
 ## 交付门槛对照（规格第八节）
 
-- A01–A27 全部有有效通过证据：**未满足**。A27 未验证；A12 的"不同卷"子场景只是模拟。
+- A01–A27：A27 已用真实窗口完成并通过机器核对（见上）。A12 的“不同卷”仍只有模拟测试。截图目视核对未做（见 A27 行）。
 - 核心安全用例无跳过：满足（0 跳过）。
 - 干净安装成功：满足（A26）。
 - 主演示 36 个文件的内容与路径完全还原：满足（CLI 演示检查 + 自动化 UI 流程）；人工界面演示尚未进行。
 
-结论：**目前不满足发布条件**。阶段 6 需要完成 A27（人工界面操作、截图、日志核对）；如果要把 A12 计为完整通过，还需要一台带第二个本地 NTFS 卷的机器。
+结论：A01–A27 均有证据；A27 的截图目视核对未做，A12 跨卷仅模拟。（第 6 阶段更新，2026-11-04）

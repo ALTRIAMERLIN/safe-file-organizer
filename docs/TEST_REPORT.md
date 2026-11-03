@@ -53,3 +53,19 @@ pytest 测的是克隆出的源码（`pyproject.toml` 里 `pythonpath = ["src"]`
 ## 测试后的变更
 
 在提交 3529669 上测试之后，只新增或修改了文档（`docs/ACCEPTANCE.md`、`docs/TEST_REPORT.md`、`docs/evidence/*`、`PROGRESS.md`、`docs/TASKS.md`），没有改代码或测试。最终提交前在工作区又跑了一次全套测试，结果见 PROGRESS.md。
+
+## 第 6 阶段：A27 真实界面运行（2026-11-04）
+
+| 项目 | 结果 |
+|------|------|
+| 被测代码 | 提交 `780978f`（第 4 轮审查修复），`src/` 未改动 |
+| 全套测试（`python -m pytest -q tests`） | **159 通过，0 失败，0 跳过**，用时 10.73 s |
+| A27 真实窗口运行（`tools/a27_ui_run.py`） | **15/15 项机器核对通过**，界面运行 58.5 s，运行 id `20261103T204653395580-49c498` |
+| 日志（应用后） | 87 个事件：3 state、12 mkdir、36 intent、36 done |
+| 日志（撤销后） | 167 个事件：5 state、12 mkdir、36 intent、36 done、36 undo_intent、36 undo_done、6 rmdir |
+| 原始录屏 | `video/raw/safe-file-organizer-real-run.mp4`，60.87 s，1920x1080，30 fps，2,091,621 字节，未剪辑 |
+
+证据：`docs/evidence/a27/`（8 张截图、`a27_checks.json`、两份日志、`A27_SUMMARY.md`）。
+
+限制：截图未做目视逐张核对（此前两次读取图片时网络报错）；A27 的结论只依据磁盘与日志的机器核对。A12 跨卷仍只有模拟测试。
+
