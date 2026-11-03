@@ -8,7 +8,7 @@ import json
 import os
 from typing import Any
 
-from .errors import JournalError, LockBusyError
+from .errors import JournalError, LockBusyError, PreflightError
 
 try:  # Windows
     import msvcrt
@@ -37,8 +37,13 @@ class RootLock:
         self.fd: int | None = None
 
     def acquire(self) -> "RootLock":
-        os.makedirs(os.path.dirname(self.path), exist_ok=True)
-        fd = os.open(self.path, os.O_RDWR | os.O_CREAT)
+        try:
+            os.makedirs(os.path.dirname(self.path), exist_ok=True)
+            fd = os.open(self.path, os.O_RDWR | os.O_CREAT)
+        except OSError as e:
+            raise PreflightError(
+                f"Cannot use the state folder ({e.strerror or e}). Nothing was changed. "
+                "Check that it exists and is writable.") from e
         try:
             if os.fstat(fd).st_size == 0:
                 os.write(fd, b"L")

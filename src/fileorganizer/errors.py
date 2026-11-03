@@ -23,7 +23,3 @@ class LockBusyError(PreflightError):
 
 class JournalError(FileOrganizerError):
     """The run journal could not be written."""
-
-
-class ExecutionError(FileOrganizerError):
-    """Failure after moves may have started (CLI exit code 3)."""

@@ -28,7 +28,7 @@ def mk(root, files, mtime_iso=None):
     return root
 
 
-def snapshot(root, skip_state=None):
+def snapshot(root):
     """{rel path: sha256} of every file below root."""
     out = {}
     for base, dirs, fs in os.walk(root):

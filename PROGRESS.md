@@ -12,7 +12,7 @@ docs/REQUIREMENTS.md, docs/DESIGN.md, docs/TASKS.md written from docs/SPEC.md be
 
 ## Stage 2 - scan / plan / conflicts (done)
 - Command: `python -m pytest -q tests` -> see latest result below.
-- Covered: A01-A12 (A12 "different volume" is NOT verified: needs a second volume; code checks `st_dev` but no test).
+- Covered: A01-A12 (A12 "different volume" is only simulated by `test_A12_target_on_different_volume_rejected_SIMULATED`; no real second volume was available).
 
 ## Stage 3 - execute / journal / lock / recovery / undo / fault injection (done)
 - `state.py` (state dir, `msvcrt.locking` per-root lock, fsync'd JSONL journal), `runs.py` (apply, recover, undo, history).
@@ -42,3 +42,21 @@ docs/REQUIREMENTS.md, docs/DESIGN.md, docs/TASKS.md written from docs/SPEC.md be
 - Release gate (spec section 8) is **not met** until A27 is done.
 
 Latest result: 139 passed (clean install, commit 3529669).
+
+- 2026-11-04：Entire 审查 trail #2 已建立（review/v1.0 以 baseline 规格骨架为根重构，含全部实现），等待三位审查员结论。
+
+## Entire review round 1 - fix summary (review/v1.0 @ 751bc76)
+1. `_reconcile` duplicate review events: fixed (skips appending when the op is already `review` with the same reason); regression test added.
+2. `RootLock.acquire` raw PermissionError: fixed (makedirs/open wrapped, raises `PreflightError`); regression tests added.
+3. Interrupted undo leaves created empty dirs: fixed (`_reconcile` calls `_remove_created_dirs` when concluding `undone`); regression tests added (2 interruption points).
+4. Dotfiles flagged "new file name would be empty": fixed (only flagged when the source stem was non-empty); regression tests added.
+5. PROGRESS.md A12 "no test" note: fixed (now references the simulated test).
+6. Unused `skip_state` in `tests/conftest.py::snapshot`: fixed (removed).
+7. `_reconcile` always True / redundant `undo_running` branch: fixed (returns whether anything was appended; branch removed); covered by the duplicate-event test.
+8. `list_runs` hiding corrupt runs: fixed (unreadable runs surface as `needs_review` via `BrokenRun`, block apply, are listed in history and review report); regression tests added.
+9. Unused `entries=` parameter of `make_plan`: fixed (removed).
+10. Unused `ExecutionError`: fixed (class and import removed).
+11. CSV export formula injection: fixed (cells starting with `=`, `+`, `-`, `@`, tab, CR get a `'` prefix); regression tests added.
+
+Blocked items: none. No existing test expectations were changed.
+Final test counts: 155 passed, 0 failed, 0 skipped (`python -m pytest -q tests`; 139 existing + 16 new).
