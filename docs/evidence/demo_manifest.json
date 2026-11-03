@@ -1,0 +1,1365 @@
+{
+ "generated_at_utc": "2026-11-03T14:18:54+00:00",
+ "python": "3.11.9",
+ "note": "Personal demo, synthetic data only.",
+ "rules": {
+  "classify": "extension",
+  "digits": 3,
+  "numbering": true,
+  "prefix": "Doc_",
+  "recursive": true
+ },
+ "tree_before": {
+  "misc files/data.v1.csv": "ab865911137b4ed8780c83a1eafc5cd45c9c4f04b28cf73ca1e0d1e3b2cf7fac",
+  "misc files/empty.pdf": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "misc files/IMG_0001.jpg": "e6a33584dc8d1d5b7d797bf82e881619d713a30b9c0ff9df1e34bd71227b75e9",
+  "misc files/invoice_jan.pdf": "976970738618d6e2e1fccc5038de66d1642a8ed67ec36de279992e6aa8b4d33c",
+  "misc files/logo.jpg": "de4896895df9937f35b861fa869ce0d7366ddd7745aba978184371a1ef31ef9d",
+  "misc files/Makefile": "d7d460e752368cf58d4143cdc918a982047a84951dcdfaf4ca6fe34c68b86527",
+  "misc files/manual.pdf": "8eb3998ea4b7ac2628d9383df61fe34d53022a62ddb22e6431487bc296706f1c",
+  "misc files/notes": "7716ec241d9d7dee190b8aaf4189a5ebb61591fa78820850cc17a21685e32bc7",
+  "misc files/notes.txt": "41e20e3060819afd3993a5c152fe349c788e2a37c81ba9f001daa72dd32eae4d",
+  "misc files/readme.txt": "2d62d552328a371ebea527341b9bfaab5fc9fb5cc2f1707b1d587c5f6ed469f6",
+  "misc files/sales.csv": "8703edfe02a07493f73d6521c7ec9c3c0557a8d64903e0ab826fa7867e6d1251",
+  "misc files/todo list.txt": "fa6c673b5b226cf56dea0e81221afadf57550e0d1b90fb58bd20fbfc18f748a8",
+  "misc files/笔记.txt": "066feb73b00d3a2acd743178e60d2c6857507f1023ce7d8cb2dc6817602a490a",
+  "photos 照片/captions.txt": "4fce054a2bea993f63e4dfd002cdc88e78d1e431e91e5ed82483d8f124c8870e",
+  "photos 照片/empty_photo.jpg": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "photos 照片/IMG_0001.jpg": "b8e25dfdc8888dba626daf46579c8217c1bd19879676bc7662bba0b9be4c589e",
+  "photos 照片/IMG_0002.JPG": "5efe55423abe75cae510356c171c07d70d0b6ffdcba0ec27fa2b87b58d4e2b6f",
+  "photos 照片/index.csv": "c17b088e3be92dba29f145faf7929ffc87105b6ce979c8723b6b17ac35aeeed1",
+  "photos 照片/README": "1bef432d583c13f6ae7c1c7857365f3a9af92c9722bc9924854f18e0bbbcf09d",
+  "photos 照片/readme.txt": "96c5205d0aeae0ddb9d064c40cd3e3b945c743e86584bc207b8621d756c59b16",
+  "photos 照片/receipt.pdf": "c812532c9838916a9eae8e1b7b7823202367ba49906abad9819658ca45e521bb",
+  "photos 照片/scan 01.pdf": "8e0e046b085301efb5e73c3328558172ebe74dce4838a11f0f27401f9c008af6",
+  "photos 照片/team.photo.jpg": "c7d8ca5f3bb39dd838ca45f916aef16cd67d0128c6bec36e53d32532f24816a4",
+  "photos 照片/旅行 照片.jpg": "e3440f38dd2aebba8dfa7c623edcd89fcbdfff98eba02b10e89da8f5ef41db38",
+  "reports/annual.report.v2.pdf": "4408bfb98e368d420e2ee6f5a8e97602dc90682ddc27095ea52653bb583c0d78",
+  "reports/budget.pdf": "08d813a2a6e2495828b689388b5e34ffc3c0f79004b76a500bb1c752cd1b49cc",
+  "reports/chart.jpg": "2fcb2fc3f686a68319e3bbdcd94ebab54b81e8bcd38c5c1b086e878450778fcf",
+  "reports/costs.csv": "17c8e1babef2d4a85ca264e1a07736f6883fe37931f64201b5e155951faf3149",
+  "reports/invoice_feb.pdf": "ce93bd7af83383be7cfe5cf6d7acfa63ec9f14a9bce96ac7604c38f4a5b4448f",
+  "reports/invoice_jan.pdf": "1c630cc5a40b9045e1140cb3f4336106b67529e3ed7ee423c185470124fa84d6",
+  "reports/LICENSE": "97c6042b301b8db1068bfdfdeb89e9bdcda42daa60d592a372aaf41ff4b5bce9",
+  "reports/notes.txt": "c44b1fa2426976dea816a3204ac29288d9963bdf5bf69bcca38ff0d2db792370",
+  "reports/sales.csv": "8f3fc7c7a310f86267f199b9bde8b2b2f0767d5f9c2e78866d2519c373f3a7a7",
+  "reports/summary.txt": "7b8f9fb3f6e14cb3b4c01f8bfacaae62b07bc25ce3c878493edfff2dce828b05",
+  "reports/合同 草稿.pdf": "4151002efa0d0a805824a1a1af9324c7ec44abf70f9815738edf9183c3eb6daf",
+  "reports/客户 名单.csv": "cef72aaf8ea760b0f6638cd7601e2c11a86b0ee9711d2a32a88c2dc4fe0567a3"
+ },
+ "tree_after_apply": {
+  "Organized/csv/Doc_costs_028.csv": "17c8e1babef2d4a85ca264e1a07736f6883fe37931f64201b5e155951faf3149",
+  "Organized/csv/Doc_data.v1_001.csv": "ab865911137b4ed8780c83a1eafc5cd45c9c4f04b28cf73ca1e0d1e3b2cf7fac",
+  "Organized/csv/Doc_index_018.csv": "c17b088e3be92dba29f145faf7929ffc87105b6ce979c8723b6b17ac35aeeed1",
+  "Organized/csv/Doc_sales_011.csv": "8703edfe02a07493f73d6521c7ec9c3c0557a8d64903e0ab826fa7867e6d1251",
+  "Organized/csv/Doc_sales_033.csv": "8f3fc7c7a310f86267f199b9bde8b2b2f0767d5f9c2e78866d2519c373f3a7a7",
+  "Organized/csv/Doc_客户 名单_036.csv": "cef72aaf8ea760b0f6638cd7601e2c11a86b0ee9711d2a32a88c2dc4fe0567a3",
+  "Organized/jpg/Doc_chart_027.jpg": "2fcb2fc3f686a68319e3bbdcd94ebab54b81e8bcd38c5c1b086e878450778fcf",
+  "Organized/jpg/Doc_empty_photo_015.jpg": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "Organized/jpg/Doc_IMG_0001_003.jpg": "e6a33584dc8d1d5b7d797bf82e881619d713a30b9c0ff9df1e34bd71227b75e9",
+  "Organized/jpg/Doc_IMG_0001_016.jpg": "b8e25dfdc8888dba626daf46579c8217c1bd19879676bc7662bba0b9be4c589e",
+  "Organized/jpg/Doc_IMG_0002_017.JPG": "5efe55423abe75cae510356c171c07d70d0b6ffdcba0ec27fa2b87b58d4e2b6f",
+  "Organized/jpg/Doc_logo_005.jpg": "de4896895df9937f35b861fa869ce0d7366ddd7745aba978184371a1ef31ef9d",
+  "Organized/jpg/Doc_team.photo_023.jpg": "c7d8ca5f3bb39dd838ca45f916aef16cd67d0128c6bec36e53d32532f24816a4",
+  "Organized/jpg/Doc_旅行 照片_024.jpg": "e3440f38dd2aebba8dfa7c623edcd89fcbdfff98eba02b10e89da8f5ef41db38",
+  "Organized/no_extension/Doc_LICENSE_031": "97c6042b301b8db1068bfdfdeb89e9bdcda42daa60d592a372aaf41ff4b5bce9",
+  "Organized/no_extension/Doc_Makefile_006": "d7d460e752368cf58d4143cdc918a982047a84951dcdfaf4ca6fe34c68b86527",
+  "Organized/no_extension/Doc_notes_008": "7716ec241d9d7dee190b8aaf4189a5ebb61591fa78820850cc17a21685e32bc7",
+  "Organized/no_extension/Doc_README_019": "1bef432d583c13f6ae7c1c7857365f3a9af92c9722bc9924854f18e0bbbcf09d",
+  "Organized/pdf/Doc_annual.report.v2_025.pdf": "4408bfb98e368d420e2ee6f5a8e97602dc90682ddc27095ea52653bb583c0d78",
+  "Organized/pdf/Doc_budget_026.pdf": "08d813a2a6e2495828b689388b5e34ffc3c0f79004b76a500bb1c752cd1b49cc",
+  "Organized/pdf/Doc_empty_002.pdf": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "Organized/pdf/Doc_invoice_feb_029.pdf": "ce93bd7af83383be7cfe5cf6d7acfa63ec9f14a9bce96ac7604c38f4a5b4448f",
+  "Organized/pdf/Doc_invoice_jan_004.pdf": "976970738618d6e2e1fccc5038de66d1642a8ed67ec36de279992e6aa8b4d33c",
+  "Organized/pdf/Doc_invoice_jan_030.pdf": "1c630cc5a40b9045e1140cb3f4336106b67529e3ed7ee423c185470124fa84d6",
+  "Organized/pdf/Doc_manual_007.pdf": "8eb3998ea4b7ac2628d9383df61fe34d53022a62ddb22e6431487bc296706f1c",
+  "Organized/pdf/Doc_receipt_021.pdf": "c812532c9838916a9eae8e1b7b7823202367ba49906abad9819658ca45e521bb",
+  "Organized/pdf/Doc_scan 01_022.pdf": "8e0e046b085301efb5e73c3328558172ebe74dce4838a11f0f27401f9c008af6",
+  "Organized/pdf/Doc_合同 草稿_035.pdf": "4151002efa0d0a805824a1a1af9324c7ec44abf70f9815738edf9183c3eb6daf",
+  "Organized/txt/Doc_captions_014.txt": "4fce054a2bea993f63e4dfd002cdc88e78d1e431e91e5ed82483d8f124c8870e",
+  "Organized/txt/Doc_notes_009.txt": "41e20e3060819afd3993a5c152fe349c788e2a37c81ba9f001daa72dd32eae4d",
+  "Organized/txt/Doc_notes_032.txt": "c44b1fa2426976dea816a3204ac29288d9963bdf5bf69bcca38ff0d2db792370",
+  "Organized/txt/Doc_readme_010.txt": "2d62d552328a371ebea527341b9bfaab5fc9fb5cc2f1707b1d587c5f6ed469f6",
+  "Organized/txt/Doc_readme_020.txt": "96c5205d0aeae0ddb9d064c40cd3e3b945c743e86584bc207b8621d756c59b16",
+  "Organized/txt/Doc_summary_034.txt": "7b8f9fb3f6e14cb3b4c01f8bfacaae62b07bc25ce3c878493edfff2dce828b05",
+  "Organized/txt/Doc_todo list_012.txt": "fa6c673b5b226cf56dea0e81221afadf57550e0d1b90fb58bd20fbfc18f748a8",
+  "Organized/txt/Doc_笔记_013.txt": "066feb73b00d3a2acd743178e60d2c6857507f1023ce7d8cb2dc6817602a490a"
+ },
+ "tree_after_undo": {
+  "misc files/data.v1.csv": "ab865911137b4ed8780c83a1eafc5cd45c9c4f04b28cf73ca1e0d1e3b2cf7fac",
+  "misc files/empty.pdf": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "misc files/IMG_0001.jpg": "e6a33584dc8d1d5b7d797bf82e881619d713a30b9c0ff9df1e34bd71227b75e9",
+  "misc files/invoice_jan.pdf": "976970738618d6e2e1fccc5038de66d1642a8ed67ec36de279992e6aa8b4d33c",
+  "misc files/logo.jpg": "de4896895df9937f35b861fa869ce0d7366ddd7745aba978184371a1ef31ef9d",
+  "misc files/Makefile": "d7d460e752368cf58d4143cdc918a982047a84951dcdfaf4ca6fe34c68b86527",
+  "misc files/manual.pdf": "8eb3998ea4b7ac2628d9383df61fe34d53022a62ddb22e6431487bc296706f1c",
+  "misc files/notes": "7716ec241d9d7dee190b8aaf4189a5ebb61591fa78820850cc17a21685e32bc7",
+  "misc files/notes.txt": "41e20e3060819afd3993a5c152fe349c788e2a37c81ba9f001daa72dd32eae4d",
+  "misc files/readme.txt": "2d62d552328a371ebea527341b9bfaab5fc9fb5cc2f1707b1d587c5f6ed469f6",
+  "misc files/sales.csv": "8703edfe02a07493f73d6521c7ec9c3c0557a8d64903e0ab826fa7867e6d1251",
+  "misc files/todo list.txt": "fa6c673b5b226cf56dea0e81221afadf57550e0d1b90fb58bd20fbfc18f748a8",
+  "misc files/笔记.txt": "066feb73b00d3a2acd743178e60d2c6857507f1023ce7d8cb2dc6817602a490a",
+  "photos 照片/captions.txt": "4fce054a2bea993f63e4dfd002cdc88e78d1e431e91e5ed82483d8f124c8870e",
+  "photos 照片/empty_photo.jpg": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "photos 照片/IMG_0001.jpg": "b8e25dfdc8888dba626daf46579c8217c1bd19879676bc7662bba0b9be4c589e",
+  "photos 照片/IMG_0002.JPG": "5efe55423abe75cae510356c171c07d70d0b6ffdcba0ec27fa2b87b58d4e2b6f",
+  "photos 照片/index.csv": "c17b088e3be92dba29f145faf7929ffc87105b6ce979c8723b6b17ac35aeeed1",
+  "photos 照片/README": "1bef432d583c13f6ae7c1c7857365f3a9af92c9722bc9924854f18e0bbbcf09d",
+  "photos 照片/readme.txt": "96c5205d0aeae0ddb9d064c40cd3e3b945c743e86584bc207b8621d756c59b16",
+  "photos 照片/receipt.pdf": "c812532c9838916a9eae8e1b7b7823202367ba49906abad9819658ca45e521bb",
+  "photos 照片/scan 01.pdf": "8e0e046b085301efb5e73c3328558172ebe74dce4838a11f0f27401f9c008af6",
+  "photos 照片/team.photo.jpg": "c7d8ca5f3bb39dd838ca45f916aef16cd67d0128c6bec36e53d32532f24816a4",
+  "photos 照片/旅行 照片.jpg": "e3440f38dd2aebba8dfa7c623edcd89fcbdfff98eba02b10e89da8f5ef41db38",
+  "reports/annual.report.v2.pdf": "4408bfb98e368d420e2ee6f5a8e97602dc90682ddc27095ea52653bb583c0d78",
+  "reports/budget.pdf": "08d813a2a6e2495828b689388b5e34ffc3c0f79004b76a500bb1c752cd1b49cc",
+  "reports/chart.jpg": "2fcb2fc3f686a68319e3bbdcd94ebab54b81e8bcd38c5c1b086e878450778fcf",
+  "reports/costs.csv": "17c8e1babef2d4a85ca264e1a07736f6883fe37931f64201b5e155951faf3149",
+  "reports/invoice_feb.pdf": "ce93bd7af83383be7cfe5cf6d7acfa63ec9f14a9bce96ac7604c38f4a5b4448f",
+  "reports/invoice_jan.pdf": "1c630cc5a40b9045e1140cb3f4336106b67529e3ed7ee423c185470124fa84d6",
+  "reports/LICENSE": "97c6042b301b8db1068bfdfdeb89e9bdcda42daa60d592a372aaf41ff4b5bce9",
+  "reports/notes.txt": "c44b1fa2426976dea816a3204ac29288d9963bdf5bf69bcca38ff0d2db792370",
+  "reports/sales.csv": "8f3fc7c7a310f86267f199b9bde8b2b2f0767d5f9c2e78866d2519c373f3a7a7",
+  "reports/summary.txt": "7b8f9fb3f6e14cb3b4c01f8bfacaae62b07bc25ce3c878493edfff2dce828b05",
+  "reports/合同 草稿.pdf": "4151002efa0d0a805824a1a1af9324c7ec44abf70f9815738edf9183c3eb6daf",
+  "reports/客户 名单.csv": "cef72aaf8ea760b0f6638cd7601e2c11a86b0ee9711d2a32a88c2dc4fe0567a3"
+ },
+ "plan_summary": {
+  "total": 37,
+  "ready": 36,
+  "conflict": 0,
+  "skipped": 1,
+  "to_move": 36,
+  "no_op": 0
+ },
+ "run_id": "20261103T141854211257-e596f8",
+ "journal": [
+  {
+   "seq": 1,
+   "t": "2026-11-03T14:18:54.213257+00:00",
+   "type": "state",
+   "state": "planned",
+   "phase": "exec"
+  },
+  {
+   "seq": 2,
+   "t": "2026-11-03T14:18:54.215757+00:00",
+   "type": "state",
+   "state": "running",
+   "phase": "exec"
+  },
+  {
+   "seq": 3,
+   "t": "2026-11-03T14:18:54.219257+00:00",
+   "type": "mkdir",
+   "stage": "intent",
+   "path": "Organized"
+  },
+  {
+   "seq": 4,
+   "t": "2026-11-03T14:18:54.221759+00:00",
+   "type": "mkdir",
+   "stage": "done",
+   "path": "Organized"
+  },
+  {
+   "seq": 5,
+   "t": "2026-11-03T14:18:54.224259+00:00",
+   "type": "mkdir",
+   "stage": "intent",
+   "path": "Organized/csv"
+  },
+  {
+   "seq": 6,
+   "t": "2026-11-03T14:18:54.226759+00:00",
+   "type": "mkdir",
+   "stage": "done",
+   "path": "Organized/csv"
+  },
+  {
+   "seq": 7,
+   "t": "2026-11-03T14:18:54.229262+00:00",
+   "type": "intent",
+   "op": 0,
+   "src": "misc files/data.v1.csv",
+   "dst": "Organized/csv/Doc_data.v1_001.csv"
+  },
+  {
+   "seq": 8,
+   "t": "2026-11-03T14:18:54.230762+00:00",
+   "type": "done",
+   "op": 0
+  },
+  {
+   "seq": 9,
+   "t": "2026-11-03T14:18:54.232762+00:00",
+   "type": "mkdir",
+   "stage": "intent",
+   "path": "Organized/pdf"
+  },
+  {
+   "seq": 10,
+   "t": "2026-11-03T14:18:54.234262+00:00",
+   "type": "mkdir",
+   "stage": "done",
+   "path": "Organized/pdf"
+  },
+  {
+   "seq": 11,
+   "t": "2026-11-03T14:18:54.235262+00:00",
+   "type": "intent",
+   "op": 1,
+   "src": "misc files/empty.pdf",
+   "dst": "Organized/pdf/Doc_empty_002.pdf"
+  },
+  {
+   "seq": 12,
+   "t": "2026-11-03T14:18:54.236767+00:00",
+   "type": "done",
+   "op": 1
+  },
+  {
+   "seq": 13,
+   "t": "2026-11-03T14:18:54.239266+00:00",
+   "type": "mkdir",
+   "stage": "intent",
+   "path": "Organized/jpg"
+  },
+  {
+   "seq": 14,
+   "t": "2026-11-03T14:18:54.240266+00:00",
+   "type": "mkdir",
+   "stage": "done",
+   "path": "Organized/jpg"
+  },
+  {
+   "seq": 15,
+   "t": "2026-11-03T14:18:54.241766+00:00",
+   "type": "intent",
+   "op": 2,
+   "src": "misc files/IMG_0001.jpg",
+   "dst": "Organized/jpg/Doc_IMG_0001_003.jpg"
+  },
+  {
+   "seq": 16,
+   "t": "2026-11-03T14:18:54.243266+00:00",
+   "type": "done",
+   "op": 2
+  },
+  {
+   "seq": 17,
+   "t": "2026-11-03T14:18:54.245766+00:00",
+   "type": "intent",
+   "op": 3,
+   "src": "misc files/invoice_jan.pdf",
+   "dst": "Organized/pdf/Doc_invoice_jan_004.pdf"
+  },
+  {
+   "seq": 18,
+   "t": "2026-11-03T14:18:54.247267+00:00",
+   "type": "done",
+   "op": 3
+  },
+  {
+   "seq": 19,
+   "t": "2026-11-03T14:18:54.250266+00:00",
+   "type": "intent",
+   "op": 4,
+   "src": "misc files/logo.jpg",
+   "dst": "Organized/jpg/Doc_logo_005.jpg"
+  },
+  {
+   "seq": 20,
+   "t": "2026-11-03T14:18:54.251766+00:00",
+   "type": "done",
+   "op": 4
+  },
+  {
+   "seq": 21,
+   "t": "2026-11-03T14:18:54.254766+00:00",
+   "type": "mkdir",
+   "stage": "intent",
+   "path": "Organized/no_extension"
+  },
+  {
+   "seq": 22,
+   "t": "2026-11-03T14:18:54.256266+00:00",
+   "type": "mkdir",
+   "stage": "done",
+   "path": "Organized/no_extension"
+  },
+  {
+   "seq": 23,
+   "t": "2026-11-03T14:18:54.257766+00:00",
+   "type": "intent",
+   "op": 5,
+   "src": "misc files/Makefile",
+   "dst": "Organized/no_extension/Doc_Makefile_006"
+  },
+  {
+   "seq": 24,
+   "t": "2026-11-03T14:18:54.259266+00:00",
+   "type": "done",
+   "op": 5
+  },
+  {
+   "seq": 25,
+   "t": "2026-11-03T14:18:54.261767+00:00",
+   "type": "intent",
+   "op": 6,
+   "src": "misc files/manual.pdf",
+   "dst": "Organized/pdf/Doc_manual_007.pdf"
+  },
+  {
+   "seq": 26,
+   "t": "2026-11-03T14:18:54.263266+00:00",
+   "type": "done",
+   "op": 6
+  },
+  {
+   "seq": 27,
+   "t": "2026-11-03T14:18:54.265769+00:00",
+   "type": "intent",
+   "op": 7,
+   "src": "misc files/notes",
+   "dst": "Organized/no_extension/Doc_notes_008"
+  },
+  {
+   "seq": 28,
+   "t": "2026-11-03T14:18:54.267269+00:00",
+   "type": "done",
+   "op": 7
+  },
+  {
+   "seq": 29,
+   "t": "2026-11-03T14:18:54.269771+00:00",
+   "type": "mkdir",
+   "stage": "intent",
+   "path": "Organized/txt"
+  },
+  {
+   "seq": 30,
+   "t": "2026-11-03T14:18:54.271273+00:00",
+   "type": "mkdir",
+   "stage": "done",
+   "path": "Organized/txt"
+  },
+  {
+   "seq": 31,
+   "t": "2026-11-03T14:18:54.272273+00:00",
+   "type": "intent",
+   "op": 8,
+   "src": "misc files/notes.txt",
+   "dst": "Organized/txt/Doc_notes_009.txt"
+  },
+  {
+   "seq": 32,
+   "t": "2026-11-03T14:18:54.273773+00:00",
+   "type": "done",
+   "op": 8
+  },
+  {
+   "seq": 33,
+   "t": "2026-11-03T14:18:54.276273+00:00",
+   "type": "intent",
+   "op": 9,
+   "src": "misc files/readme.txt",
+   "dst": "Organized/txt/Doc_readme_010.txt"
+  },
+  {
+   "seq": 34,
+   "t": "2026-11-03T14:18:54.277773+00:00",
+   "type": "done",
+   "op": 9
+  },
+  {
+   "seq": 35,
+   "t": "2026-11-03T14:18:54.280280+00:00",
+   "type": "intent",
+   "op": 10,
+   "src": "misc files/sales.csv",
+   "dst": "Organized/csv/Doc_sales_011.csv"
+  },
+  {
+   "seq": 36,
+   "t": "2026-11-03T14:18:54.281779+00:00",
+   "type": "done",
+   "op": 10
+  },
+  {
+   "seq": 37,
+   "t": "2026-11-03T14:18:54.284281+00:00",
+   "type": "intent",
+   "op": 11,
+   "src": "misc files/todo list.txt",
+   "dst": "Organized/txt/Doc_todo list_012.txt"
+  },
+  {
+   "seq": 38,
+   "t": "2026-11-03T14:18:54.285782+00:00",
+   "type": "done",
+   "op": 11
+  },
+  {
+   "seq": 39,
+   "t": "2026-11-03T14:18:54.288286+00:00",
+   "type": "intent",
+   "op": 12,
+   "src": "misc files/笔记.txt",
+   "dst": "Organized/txt/Doc_笔记_013.txt"
+  },
+  {
+   "seq": 40,
+   "t": "2026-11-03T14:18:54.289786+00:00",
+   "type": "done",
+   "op": 12
+  },
+  {
+   "seq": 41,
+   "t": "2026-11-03T14:18:54.292286+00:00",
+   "type": "intent",
+   "op": 13,
+   "src": "photos 照片/captions.txt",
+   "dst": "Organized/txt/Doc_captions_014.txt"
+  },
+  {
+   "seq": 42,
+   "t": "2026-11-03T14:18:54.293286+00:00",
+   "type": "done",
+   "op": 13
+  },
+  {
+   "seq": 43,
+   "t": "2026-11-03T14:18:54.295286+00:00",
+   "type": "intent",
+   "op": 14,
+   "src": "photos 照片/empty_photo.jpg",
+   "dst": "Organized/jpg/Doc_empty_photo_015.jpg"
+  },
+  {
+   "seq": 44,
+   "t": "2026-11-03T14:18:54.297290+00:00",
+   "type": "done",
+   "op": 14
+  },
+  {
+   "seq": 45,
+   "t": "2026-11-03T14:18:54.299293+00:00",
+   "type": "intent",
+   "op": 15,
+   "src": "photos 照片/IMG_0001.jpg",
+   "dst": "Organized/jpg/Doc_IMG_0001_016.jpg"
+  },
+  {
+   "seq": 46,
+   "t": "2026-11-03T14:18:54.300793+00:00",
+   "type": "done",
+   "op": 15
+  },
+  {
+   "seq": 47,
+   "t": "2026-11-03T14:18:54.303295+00:00",
+   "type": "intent",
+   "op": 16,
+   "src": "photos 照片/IMG_0002.JPG",
+   "dst": "Organized/jpg/Doc_IMG_0002_017.JPG"
+  },
+  {
+   "seq": 48,
+   "t": "2026-11-03T14:18:54.304795+00:00",
+   "type": "done",
+   "op": 16
+  },
+  {
+   "seq": 49,
+   "t": "2026-11-03T14:18:54.307295+00:00",
+   "type": "intent",
+   "op": 17,
+   "src": "photos 照片/index.csv",
+   "dst": "Organized/csv/Doc_index_018.csv"
+  },
+  {
+   "seq": 50,
+   "t": "2026-11-03T14:18:54.308795+00:00",
+   "type": "done",
+   "op": 17
+  },
+  {
+   "seq": 51,
+   "t": "2026-11-03T14:18:54.311795+00:00",
+   "type": "intent",
+   "op": 18,
+   "src": "photos 照片/README",
+   "dst": "Organized/no_extension/Doc_README_019"
+  },
+  {
+   "seq": 52,
+   "t": "2026-11-03T14:18:54.313295+00:00",
+   "type": "done",
+   "op": 18
+  },
+  {
+   "seq": 53,
+   "t": "2026-11-03T14:18:54.315795+00:00",
+   "type": "intent",
+   "op": 19,
+   "src": "photos 照片/readme.txt",
+   "dst": "Organized/txt/Doc_readme_020.txt"
+  },
+  {
+   "seq": 54,
+   "t": "2026-11-03T14:18:54.317797+00:00",
+   "type": "done",
+   "op": 19
+  },
+  {
+   "seq": 55,
+   "t": "2026-11-03T14:18:54.320297+00:00",
+   "type": "intent",
+   "op": 20,
+   "src": "photos 照片/receipt.pdf",
+   "dst": "Organized/pdf/Doc_receipt_021.pdf"
+  },
+  {
+   "seq": 56,
+   "t": "2026-11-03T14:18:54.321799+00:00",
+   "type": "done",
+   "op": 20
+  },
+  {
+   "seq": 57,
+   "t": "2026-11-03T14:18:54.324299+00:00",
+   "type": "intent",
+   "op": 21,
+   "src": "photos 照片/scan 01.pdf",
+   "dst": "Organized/pdf/Doc_scan 01_022.pdf"
+  },
+  {
+   "seq": 58,
+   "t": "2026-11-03T14:18:54.325799+00:00",
+   "type": "done",
+   "op": 21
+  },
+  {
+   "seq": 59,
+   "t": "2026-11-03T14:18:54.328299+00:00",
+   "type": "intent",
+   "op": 22,
+   "src": "photos 照片/team.photo.jpg",
+   "dst": "Organized/jpg/Doc_team.photo_023.jpg"
+  },
+  {
+   "seq": 60,
+   "t": "2026-11-03T14:18:54.329799+00:00",
+   "type": "done",
+   "op": 22
+  },
+  {
+   "seq": 61,
+   "t": "2026-11-03T14:18:54.332299+00:00",
+   "type": "intent",
+   "op": 23,
+   "src": "photos 照片/旅行 照片.jpg",
+   "dst": "Organized/jpg/Doc_旅行 照片_024.jpg"
+  },
+  {
+   "seq": 62,
+   "t": "2026-11-03T14:18:54.333299+00:00",
+   "type": "done",
+   "op": 23
+  },
+  {
+   "seq": 63,
+   "t": "2026-11-03T14:18:54.335799+00:00",
+   "type": "intent",
+   "op": 24,
+   "src": "reports/annual.report.v2.pdf",
+   "dst": "Organized/pdf/Doc_annual.report.v2_025.pdf"
+  },
+  {
+   "seq": 64,
+   "t": "2026-11-03T14:18:54.337301+00:00",
+   "type": "done",
+   "op": 24
+  },
+  {
+   "seq": 65,
+   "t": "2026-11-03T14:18:54.339804+00:00",
+   "type": "intent",
+   "op": 25,
+   "src": "reports/budget.pdf",
+   "dst": "Organized/pdf/Doc_budget_026.pdf"
+  },
+  {
+   "seq": 66,
+   "t": "2026-11-03T14:18:54.341304+00:00",
+   "type": "done",
+   "op": 25
+  },
+  {
+   "seq": 67,
+   "t": "2026-11-03T14:18:54.343804+00:00",
+   "type": "intent",
+   "op": 26,
+   "src": "reports/chart.jpg",
+   "dst": "Organized/jpg/Doc_chart_027.jpg"
+  },
+  {
+   "seq": 68,
+   "t": "2026-11-03T14:18:54.345304+00:00",
+   "type": "done",
+   "op": 26
+  },
+  {
+   "seq": 69,
+   "t": "2026-11-03T14:18:54.347804+00:00",
+   "type": "intent",
+   "op": 27,
+   "src": "reports/costs.csv",
+   "dst": "Organized/csv/Doc_costs_028.csv"
+  },
+  {
+   "seq": 70,
+   "t": "2026-11-03T14:18:54.349306+00:00",
+   "type": "done",
+   "op": 27
+  },
+  {
+   "seq": 71,
+   "t": "2026-11-03T14:18:54.351308+00:00",
+   "type": "intent",
+   "op": 28,
+   "src": "reports/invoice_feb.pdf",
+   "dst": "Organized/pdf/Doc_invoice_feb_029.pdf"
+  },
+  {
+   "seq": 72,
+   "t": "2026-11-03T14:18:54.352641+00:00",
+   "type": "done",
+   "op": 28
+  },
+  {
+   "seq": 73,
+   "t": "2026-11-03T14:18:54.355811+00:00",
+   "type": "intent",
+   "op": 29,
+   "src": "reports/invoice_jan.pdf",
+   "dst": "Organized/pdf/Doc_invoice_jan_030.pdf"
+  },
+  {
+   "seq": 74,
+   "t": "2026-11-03T14:18:54.356811+00:00",
+   "type": "done",
+   "op": 29
+  },
+  {
+   "seq": 75,
+   "t": "2026-11-03T14:18:54.359314+00:00",
+   "type": "intent",
+   "op": 30,
+   "src": "reports/LICENSE",
+   "dst": "Organized/no_extension/Doc_LICENSE_031"
+  },
+  {
+   "seq": 76,
+   "t": "2026-11-03T14:18:54.360814+00:00",
+   "type": "done",
+   "op": 30
+  },
+  {
+   "seq": 77,
+   "t": "2026-11-03T14:18:54.363314+00:00",
+   "type": "intent",
+   "op": 31,
+   "src": "reports/notes.txt",
+   "dst": "Organized/txt/Doc_notes_032.txt"
+  },
+  {
+   "seq": 78,
+   "t": "2026-11-03T14:18:54.364813+00:00",
+   "type": "done",
+   "op": 31
+  },
+  {
+   "seq": 79,
+   "t": "2026-11-03T14:18:54.367313+00:00",
+   "type": "intent",
+   "op": 32,
+   "src": "reports/sales.csv",
+   "dst": "Organized/csv/Doc_sales_033.csv"
+  },
+  {
+   "seq": 80,
+   "t": "2026-11-03T14:18:54.368813+00:00",
+   "type": "done",
+   "op": 32
+  },
+  {
+   "seq": 81,
+   "t": "2026-11-03T14:18:54.371313+00:00",
+   "type": "intent",
+   "op": 33,
+   "src": "reports/summary.txt",
+   "dst": "Organized/txt/Doc_summary_034.txt"
+  },
+  {
+   "seq": 82,
+   "t": "2026-11-03T14:18:54.372816+00:00",
+   "type": "done",
+   "op": 33
+  },
+  {
+   "seq": 83,
+   "t": "2026-11-03T14:18:54.375816+00:00",
+   "type": "intent",
+   "op": 34,
+   "src": "reports/合同 草稿.pdf",
+   "dst": "Organized/pdf/Doc_合同 草稿_035.pdf"
+  },
+  {
+   "seq": 84,
+   "t": "2026-11-03T14:18:54.377316+00:00",
+   "type": "done",
+   "op": 34
+  },
+  {
+   "seq": 85,
+   "t": "2026-11-03T14:18:54.379816+00:00",
+   "type": "intent",
+   "op": 35,
+   "src": "reports/客户 名单.csv",
+   "dst": "Organized/csv/Doc_客户 名单_036.csv"
+  },
+  {
+   "seq": 86,
+   "t": "2026-11-03T14:18:54.381316+00:00",
+   "type": "done",
+   "op": 35
+  },
+  {
+   "seq": 87,
+   "t": "2026-11-03T14:18:54.383816+00:00",
+   "type": "state",
+   "state": "completed",
+   "phase": "exec"
+  },
+  {
+   "seq": 88,
+   "t": "2026-11-03T14:18:54.518357+00:00",
+   "type": "state",
+   "state": "undo_running",
+   "phase": "undo"
+  },
+  {
+   "seq": 89,
+   "t": "2026-11-03T14:18:54.520357+00:00",
+   "type": "undo_intent",
+   "op": 35
+  },
+  {
+   "seq": 90,
+   "t": "2026-11-03T14:18:54.521857+00:00",
+   "type": "undo_done",
+   "op": 35
+  },
+  {
+   "seq": 91,
+   "t": "2026-11-03T14:18:54.524357+00:00",
+   "type": "undo_intent",
+   "op": 34
+  },
+  {
+   "seq": 92,
+   "t": "2026-11-03T14:18:54.525357+00:00",
+   "type": "undo_done",
+   "op": 34
+  },
+  {
+   "seq": 93,
+   "t": "2026-11-03T14:18:54.527859+00:00",
+   "type": "undo_intent",
+   "op": 33
+  },
+  {
+   "seq": 94,
+   "t": "2026-11-03T14:18:54.529359+00:00",
+   "type": "undo_done",
+   "op": 33
+  },
+  {
+   "seq": 95,
+   "t": "2026-11-03T14:18:54.531359+00:00",
+   "type": "undo_intent",
+   "op": 32
+  },
+  {
+   "seq": 96,
+   "t": "2026-11-03T14:18:54.532859+00:00",
+   "type": "undo_done",
+   "op": 32
+  },
+  {
+   "seq": 97,
+   "t": "2026-11-03T14:18:54.535359+00:00",
+   "type": "undo_intent",
+   "op": 31
+  },
+  {
+   "seq": 98,
+   "t": "2026-11-03T14:18:54.536859+00:00",
+   "type": "undo_done",
+   "op": 31
+  },
+  {
+   "seq": 99,
+   "t": "2026-11-03T14:18:54.538859+00:00",
+   "type": "undo_intent",
+   "op": 30
+  },
+  {
+   "seq": 100,
+   "t": "2026-11-03T14:18:54.540359+00:00",
+   "type": "undo_done",
+   "op": 30
+  },
+  {
+   "seq": 101,
+   "t": "2026-11-03T14:18:54.542359+00:00",
+   "type": "undo_intent",
+   "op": 29
+  },
+  {
+   "seq": 102,
+   "t": "2026-11-03T14:18:54.543861+00:00",
+   "type": "undo_done",
+   "op": 29
+  },
+  {
+   "seq": 103,
+   "t": "2026-11-03T14:18:54.545861+00:00",
+   "type": "undo_intent",
+   "op": 28
+  },
+  {
+   "seq": 104,
+   "t": "2026-11-03T14:18:54.547361+00:00",
+   "type": "undo_done",
+   "op": 28
+  },
+  {
+   "seq": 105,
+   "t": "2026-11-03T14:18:54.549861+00:00",
+   "type": "undo_intent",
+   "op": 27
+  },
+  {
+   "seq": 106,
+   "t": "2026-11-03T14:18:54.551361+00:00",
+   "type": "undo_done",
+   "op": 27
+  },
+  {
+   "seq": 107,
+   "t": "2026-11-03T14:18:54.553361+00:00",
+   "type": "undo_intent",
+   "op": 26
+  },
+  {
+   "seq": 108,
+   "t": "2026-11-03T14:18:54.554861+00:00",
+   "type": "undo_done",
+   "op": 26
+  },
+  {
+   "seq": 109,
+   "t": "2026-11-03T14:18:54.556861+00:00",
+   "type": "undo_intent",
+   "op": 25
+  },
+  {
+   "seq": 110,
+   "t": "2026-11-03T14:18:54.558361+00:00",
+   "type": "undo_done",
+   "op": 25
+  },
+  {
+   "seq": 111,
+   "t": "2026-11-03T14:18:54.560361+00:00",
+   "type": "undo_intent",
+   "op": 24
+  },
+  {
+   "seq": 112,
+   "t": "2026-11-03T14:18:54.561861+00:00",
+   "type": "undo_done",
+   "op": 24
+  },
+  {
+   "seq": 113,
+   "t": "2026-11-03T14:18:54.564361+00:00",
+   "type": "undo_intent",
+   "op": 23
+  },
+  {
+   "seq": 114,
+   "t": "2026-11-03T14:18:54.565861+00:00",
+   "type": "undo_done",
+   "op": 23
+  },
+  {
+   "seq": 115,
+   "t": "2026-11-03T14:18:54.568361+00:00",
+   "type": "undo_intent",
+   "op": 22
+  },
+  {
+   "seq": 116,
+   "t": "2026-11-03T14:18:54.569861+00:00",
+   "type": "undo_done",
+   "op": 22
+  },
+  {
+   "seq": 117,
+   "t": "2026-11-03T14:18:54.572361+00:00",
+   "type": "undo_intent",
+   "op": 21
+  },
+  {
+   "seq": 118,
+   "t": "2026-11-03T14:18:54.573861+00:00",
+   "type": "undo_done",
+   "op": 21
+  },
+  {
+   "seq": 119,
+   "t": "2026-11-03T14:18:54.576363+00:00",
+   "type": "undo_intent",
+   "op": 20
+  },
+  {
+   "seq": 120,
+   "t": "2026-11-03T14:18:54.578363+00:00",
+   "type": "undo_done",
+   "op": 20
+  },
+  {
+   "seq": 121,
+   "t": "2026-11-03T14:18:54.580363+00:00",
+   "type": "undo_intent",
+   "op": 19
+  },
+  {
+   "seq": 122,
+   "t": "2026-11-03T14:18:54.581863+00:00",
+   "type": "undo_done",
+   "op": 19
+  },
+  {
+   "seq": 123,
+   "t": "2026-11-03T14:18:54.584363+00:00",
+   "type": "undo_intent",
+   "op": 18
+  },
+  {
+   "seq": 124,
+   "t": "2026-11-03T14:18:54.585363+00:00",
+   "type": "undo_done",
+   "op": 18
+  },
+  {
+   "seq": 125,
+   "t": "2026-11-03T14:18:54.587863+00:00",
+   "type": "undo_intent",
+   "op": 17
+  },
+  {
+   "seq": 126,
+   "t": "2026-11-03T14:18:54.589363+00:00",
+   "type": "undo_done",
+   "op": 17
+  },
+  {
+   "seq": 127,
+   "t": "2026-11-03T14:18:54.590863+00:00",
+   "type": "undo_intent",
+   "op": 16
+  },
+  {
+   "seq": 128,
+   "t": "2026-11-03T14:18:54.592868+00:00",
+   "type": "undo_done",
+   "op": 16
+  },
+  {
+   "seq": 129,
+   "t": "2026-11-03T14:18:54.595368+00:00",
+   "type": "undo_intent",
+   "op": 15
+  },
+  {
+   "seq": 130,
+   "t": "2026-11-03T14:18:54.596868+00:00",
+   "type": "undo_done",
+   "op": 15
+  },
+  {
+   "seq": 131,
+   "t": "2026-11-03T14:18:54.598868+00:00",
+   "type": "undo_intent",
+   "op": 14
+  },
+  {
+   "seq": 132,
+   "t": "2026-11-03T14:18:54.600368+00:00",
+   "type": "undo_done",
+   "op": 14
+  },
+  {
+   "seq": 133,
+   "t": "2026-11-03T14:18:54.602368+00:00",
+   "type": "undo_intent",
+   "op": 13
+  },
+  {
+   "seq": 134,
+   "t": "2026-11-03T14:18:54.603868+00:00",
+   "type": "undo_done",
+   "op": 13
+  },
+  {
+   "seq": 135,
+   "t": "2026-11-03T14:18:54.605868+00:00",
+   "type": "undo_intent",
+   "op": 12
+  },
+  {
+   "seq": 136,
+   "t": "2026-11-03T14:18:54.607368+00:00",
+   "type": "undo_done",
+   "op": 12
+  },
+  {
+   "seq": 137,
+   "t": "2026-11-03T14:18:54.609868+00:00",
+   "type": "undo_intent",
+   "op": 11
+  },
+  {
+   "seq": 138,
+   "t": "2026-11-03T14:18:54.611370+00:00",
+   "type": "undo_done",
+   "op": 11
+  },
+  {
+   "seq": 139,
+   "t": "2026-11-03T14:18:54.613868+00:00",
+   "type": "undo_intent",
+   "op": 10
+  },
+  {
+   "seq": 140,
+   "t": "2026-11-03T14:18:54.614868+00:00",
+   "type": "undo_done",
+   "op": 10
+  },
+  {
+   "seq": 141,
+   "t": "2026-11-03T14:18:54.617368+00:00",
+   "type": "undo_intent",
+   "op": 9
+  },
+  {
+   "seq": 142,
+   "t": "2026-11-03T14:18:54.618868+00:00",
+   "type": "undo_done",
+   "op": 9
+  },
+  {
+   "seq": 143,
+   "t": "2026-11-03T14:18:54.621368+00:00",
+   "type": "undo_intent",
+   "op": 8
+  },
+  {
+   "seq": 144,
+   "t": "2026-11-03T14:18:54.622868+00:00",
+   "type": "undo_done",
+   "op": 8
+  },
+  {
+   "seq": 145,
+   "t": "2026-11-03T14:18:54.625368+00:00",
+   "type": "undo_intent",
+   "op": 7
+  },
+  {
+   "seq": 146,
+   "t": "2026-11-03T14:18:54.626868+00:00",
+   "type": "undo_done",
+   "op": 7
+  },
+  {
+   "seq": 147,
+   "t": "2026-11-03T14:18:54.629368+00:00",
+   "type": "undo_intent",
+   "op": 6
+  },
+  {
+   "seq": 148,
+   "t": "2026-11-03T14:18:54.630868+00:00",
+   "type": "undo_done",
+   "op": 6
+  },
+  {
+   "seq": 149,
+   "t": "2026-11-03T14:18:54.633868+00:00",
+   "type": "undo_intent",
+   "op": 5
+  },
+  {
+   "seq": 150,
+   "t": "2026-11-03T14:18:54.635370+00:00",
+   "type": "undo_done",
+   "op": 5
+  },
+  {
+   "seq": 151,
+   "t": "2026-11-03T14:18:54.637870+00:00",
+   "type": "undo_intent",
+   "op": 4
+  },
+  {
+   "seq": 152,
+   "t": "2026-11-03T14:18:54.639370+00:00",
+   "type": "undo_done",
+   "op": 4
+  },
+  {
+   "seq": 153,
+   "t": "2026-11-03T14:18:54.641370+00:00",
+   "type": "undo_intent",
+   "op": 3
+  },
+  {
+   "seq": 154,
+   "t": "2026-11-03T14:18:54.642875+00:00",
+   "type": "undo_done",
+   "op": 3
+  },
+  {
+   "seq": 155,
+   "t": "2026-11-03T14:18:54.645375+00:00",
+   "type": "undo_intent",
+   "op": 2
+  },
+  {
+   "seq": 156,
+   "t": "2026-11-03T14:18:54.646875+00:00",
+   "type": "undo_done",
+   "op": 2
+  },
+  {
+   "seq": 157,
+   "t": "2026-11-03T14:18:54.648875+00:00",
+   "type": "undo_intent",
+   "op": 1
+  },
+  {
+   "seq": 158,
+   "t": "2026-11-03T14:18:54.650375+00:00",
+   "type": "undo_done",
+   "op": 1
+  },
+  {
+   "seq": 159,
+   "t": "2026-11-03T14:18:54.652375+00:00",
+   "type": "undo_intent",
+   "op": 0
+  },
+  {
+   "seq": 160,
+   "t": "2026-11-03T14:18:54.653375+00:00",
+   "type": "undo_done",
+   "op": 0
+  },
+  {
+   "seq": 161,
+   "t": "2026-11-03T14:18:54.655375+00:00",
+   "type": "rmdir",
+   "path": "Organized/txt",
+   "result": "removed"
+  },
+  {
+   "seq": 162,
+   "t": "2026-11-03T14:18:54.656875+00:00",
+   "type": "rmdir",
+   "path": "Organized/no_extension",
+   "result": "removed"
+  },
+  {
+   "seq": 163,
+   "t": "2026-11-03T14:18:54.658375+00:00",
+   "type": "rmdir",
+   "path": "Organized/jpg",
+   "result": "removed"
+  },
+  {
+   "seq": 164,
+   "t": "2026-11-03T14:18:54.659875+00:00",
+   "type": "rmdir",
+   "path": "Organized/pdf",
+   "result": "removed"
+  },
+  {
+   "seq": 165,
+   "t": "2026-11-03T14:18:54.661375+00:00",
+   "type": "rmdir",
+   "path": "Organized/csv",
+   "result": "removed"
+  },
+  {
+   "seq": 166,
+   "t": "2026-11-03T14:18:54.662875+00:00",
+   "type": "rmdir",
+   "path": "Organized",
+   "result": "removed"
+  },
+  {
+   "seq": 167,
+   "t": "2026-11-03T14:18:54.663875+00:00",
+   "type": "state",
+   "state": "undone",
+   "phase": "undo"
+  }
+ ],
+ "commands": [
+  {
+   "cmd": "fileorganizer --version",
+   "exit": 0,
+   "stdout": "fileorganizer 1.0.0\n",
+   "stderr": ""
+  },
+  {
+   "cmd": "fileorganizer plan <OUT>\\demo_workspace --rules <OUT>\\rules.json --out <OUT>\\plan.json",
+   "exit": 0,
+   "stdout": "Plan c3e9b62e4b6e4fa2b35216067ac0a585 written to <OUT>\\plan.json\nScanned 37: ready=36 (to move=36, no_op=0) conflict=0 skipped=1\n",
+   "stderr": ""
+  },
+  {
+   "cmd": "fileorganizer apply <OUT>\\plan.json --yes",
+   "exit": 0,
+   "stdout": "  done     misc files/data.v1.csv -> Organized/csv/Doc_data.v1_001.csv\n  done     misc files/empty.pdf -> Organized/pdf/Doc_empty_002.pdf\n  done     misc files/IMG_0001.jpg -> Organized/jpg/Doc_IMG_0001_003.jpg\n  done     misc files/invoice_jan.pdf -> Organized/pdf/Doc_invoice_jan_004.pdf\n  done     misc files/logo.jpg -> Organized/jpg/Doc_logo_005.jpg\n  done     misc files/Makefile -> Organized/no_extension/Doc_Makefile_006\n  done     misc files/manual.pdf -> Organized/pdf/Doc_manual_007.pdf\n  done     misc files/notes -> Organized/no_extension/Doc_notes_008\n  done     misc files/notes.txt -> Organized/txt/Doc_notes_009.txt\n  done     misc files/readme.txt -> Organized/txt/Doc_readme_010.txt\n  done     misc files/sales.csv -> Organized/csv/Doc_sales_011.csv\n  done     misc files/todo list.txt -> Organized/txt/Doc_todo list_012.txt\n  done     misc files/笔记.txt -> Organized/txt/Doc_笔记_013.txt\n  done     photos 照片/captions.txt -> Organized/txt/Doc_captions_014.txt\n  done     photos 照片/empty_photo.jpg -> Organized/jpg/Doc_empty_photo_015.jpg\n  done     photos 照片/IMG_0001.jpg -> Organized/jpg/Doc_IMG_0001_016.jpg\n  done     photos 照片/IMG_0002.JPG -> Organized/jpg/Doc_IMG_0002_017.JPG\n  done     photos 照片/index.csv -> Organized/csv/Doc_index_018.csv\n  done     photos 照片/README -> Organized/no_extension/Doc_README_019\n  done     photos 照片/readme.txt -> Organized/txt/Doc_readme_020.txt\n  done     photos 照片/receipt.pdf -> Organized/pdf/Doc_receipt_021.pdf\n  done     photos 照片/scan 01.pdf -> Organized/pdf/Doc_scan 01_022.pdf\n  done     photos 照片/team.photo.jpg -> Organized/jpg/Doc_team.photo_023.jpg\n  done     photos 照片/旅行 照片.jpg -> Organized/jpg/Doc_旅行 照片_024.jpg\n  done     reports/annual.report.v2.pdf -> Organized/pdf/Doc_annual.report.v2_025.pdf\n  done     reports/budget.pdf -> Organized/pdf/Doc_budget_026.pdf\n  done     reports/chart.jpg -> Organized/jpg/Doc_chart_027.jpg\n  done     reports/costs.csv -> Organized/csv/Doc_costs_028.csv\n  done     reports/invoice_feb.pdf -> Organized/pdf/Doc_invoice_feb_029.pdf\n  done     reports/invoice_jan.pdf -> Organized/pdf/Doc_invoice_jan_030.pdf\n  done     reports/LICENSE -> Organized/no_extension/Doc_LICENSE_031\n  done     reports/notes.txt -> Organized/txt/Doc_notes_032.txt\n  done     reports/sales.csv -> Organized/csv/Doc_sales_033.csv\n  done     reports/summary.txt -> Organized/txt/Doc_summary_034.txt\n  done     reports/合同 草稿.pdf -> Organized/pdf/Doc_合同 草稿_035.pdf\n  done     reports/客户 名单.csv -> Organized/csv/Doc_客户 名单_036.csv\nResult: completed. done=36 failed=0 not_run=0\nRun id: 20261103T141854211257-e596f8\n",
+   "stderr": ""
+  },
+  {
+   "cmd": "fileorganizer history --root <OUT>\\demo_workspace --json",
+   "exit": 0,
+   "stdout": "[\n  {\n    \"run_id\": \"20261103T141854211257-e596f8\",\n    \"root\": \"<OUT>\\\\demo_workspace\",\n    \"state\": \"completed\",\n    \"created_at\": \"2026-11-03T14:18:54.211257+00:00\",\n    \"plan_id\": \"c3e9b62e4b6e4fa2b35216067ac0a585\",\n    \"operations\": 36,\n    \"moved\": 36,\n    \"restored\": 0\n  }\n]\n",
+   "stderr": ""
+  },
+  {
+   "cmd": "fileorganizer undo 20261103T141854211257-e596f8 --yes",
+   "exit": 0,
+   "stdout": "  done     Organized/csv/Doc_客户 名单_036.csv -> reports/客户 名单.csv\n  done     Organized/pdf/Doc_合同 草稿_035.pdf -> reports/合同 草稿.pdf\n  done     Organized/txt/Doc_summary_034.txt -> reports/summary.txt\n  done     Organized/csv/Doc_sales_033.csv -> reports/sales.csv\n  done     Organized/txt/Doc_notes_032.txt -> reports/notes.txt\n  done     Organized/no_extension/Doc_LICENSE_031 -> reports/LICENSE\n  done     Organized/pdf/Doc_invoice_jan_030.pdf -> reports/invoice_jan.pdf\n  done     Organized/pdf/Doc_invoice_feb_029.pdf -> reports/invoice_feb.pdf\n  done     Organized/csv/Doc_costs_028.csv -> reports/costs.csv\n  done     Organized/jpg/Doc_chart_027.jpg -> reports/chart.jpg\n  done     Organized/pdf/Doc_budget_026.pdf -> reports/budget.pdf\n  done     Organized/pdf/Doc_annual.report.v2_025.pdf -> reports/annual.report.v2.pdf\n  done     Organized/jpg/Doc_旅行 照片_024.jpg -> photos 照片/旅行 照片.jpg\n  done     Organized/jpg/Doc_team.photo_023.jpg -> photos 照片/team.photo.jpg\n  done     Organized/pdf/Doc_scan 01_022.pdf -> photos 照片/scan 01.pdf\n  done     Organized/pdf/Doc_receipt_021.pdf -> photos 照片/receipt.pdf\n  done     Organized/txt/Doc_readme_020.txt -> photos 照片/readme.txt\n  done     Organized/no_extension/Doc_README_019 -> photos 照片/README\n  done     Organized/csv/Doc_index_018.csv -> photos 照片/index.csv\n  done     Organized/jpg/Doc_IMG_0002_017.JPG -> photos 照片/IMG_0002.JPG\n  done     Organized/jpg/Doc_IMG_0001_016.jpg -> photos 照片/IMG_0001.jpg\n  done     Organized/jpg/Doc_empty_photo_015.jpg -> photos 照片/empty_photo.jpg\n  done     Organized/txt/Doc_captions_014.txt -> photos 照片/captions.txt\n  done     Organized/txt/Doc_笔记_013.txt -> misc files/笔记.txt\n  done     Organized/txt/Doc_todo list_012.txt -> misc files/todo list.txt\n  done     Organized/csv/Doc_sales_011.csv -> misc files/sales.csv\n  done     Organized/txt/Doc_readme_010.txt -> misc files/readme.txt\n  done     Organized/txt/Doc_notes_009.txt -> misc files/notes.txt\n  done     Organized/no_extension/Doc_notes_008 -> misc files/notes\n  done     Organized/pdf/Doc_manual_007.pdf -> misc files/manual.pdf\n  done     Organized/no_extension/Doc_Makefile_006 -> misc files/Makefile\n  done     Organized/jpg/Doc_logo_005.jpg -> misc files/logo.jpg\n  done     Organized/pdf/Doc_invoice_jan_004.pdf -> misc files/invoice_jan.pdf\n  done     Organized/jpg/Doc_IMG_0001_003.jpg -> misc files/IMG_0001.jpg\n  done     Organized/pdf/Doc_empty_002.pdf -> misc files/empty.pdf\n  done     Organized/csv/Doc_data.v1_001.csv -> misc files/data.v1.csv\nResult: undone. done=36 failed=0 not_run=0\nRun id: 20261103T141854211257-e596f8\n",
+   "stderr": ""
+  },
+  {
+   "cmd": "fileorganizer plan <OUT>\\conflict_ws --rules <OUT>\\conflict_rules.json --out <OUT>\\conflict_plan.json",
+   "exit": 2,
+   "stdout": "Plan a9b03607c7b54364ab8f821f2af16e54 written to <OUT>\\conflict_plan.json\nScanned 4: ready=1 (to move=1, no_op=0) conflict=2 skipped=1\n  CONFLICT 2025/invoice.pdf -> Organized/pdf/invoice.pdf: another file maps to the same target\n  CONFLICT 2026/invoice.pdf -> Organized/pdf/invoice.pdf: another file maps to the same target\n",
+   "stderr": "The plan has conflicts and cannot be applied. Fix them and run 'plan' again.\n"
+  },
+  {
+   "cmd": "fileorganizer apply <OUT>\\conflict_plan.json --yes",
+   "exit": 2,
+   "stdout": "",
+   "stderr": "Error: Plan cannot be applied: 2 problem(s). Nothing was moved. Fix the listed items and create a new plan.\n  - 2025/invoice.pdf: conflict - another file maps to the same target\n  - 2026/invoice.pdf: conflict - another file maps to the same target\n"
+  }
+ ],
+ "checks": [
+  {
+   "check": "fixture has 36 files",
+   "result": "pass",
+   "detail": "36"
+  },
+  {
+   "check": "fixture SHA-256 matches frozen expectation",
+   "result": "pass",
+   "detail": ""
+  },
+  {
+   "check": "installed CLI runs",
+   "result": "pass",
+   "detail": "fileorganizer 1.0.0"
+  },
+  {
+   "check": "plan exit 0",
+   "result": "pass",
+   "detail": ""
+  },
+  {
+   "check": "preview 36 ready / 0 conflict",
+   "result": "pass",
+   "detail": "{\"total\": 37, \"ready\": 36, \"conflict\": 0, \"skipped\": 1, \"to_move\": 36, \"no_op\": 0}"
+  },
+  {
+   "check": "plan mapping equals independent frozen mapping",
+   "result": "pass",
+   "detail": ""
+  },
+  {
+   "check": "preview changed nothing",
+   "result": "pass",
+   "detail": ""
+  },
+  {
+   "check": "apply exit 0, 36 done",
+   "result": "pass",
+   "detail": ""
+  },
+  {
+   "check": "every target exists with the planned SHA-256",
+   "result": "pass",
+   "detail": ""
+  },
+  {
+   "check": "history shows 1 completed run, 36 moved",
+   "result": "pass",
+   "detail": ""
+  },
+  {
+   "check": "journal: 36 intent + 36 done",
+   "result": "pass",
+   "detail": ""
+  },
+  {
+   "check": "undo exit 0, 36 restored",
+   "result": "pass",
+   "detail": ""
+  },
+  {
+   "check": "after undo: all original paths and SHA-256 restored",
+   "result": "pass",
+   "detail": ""
+  },
+  {
+   "check": "Organized folders created by the run were removed",
+   "result": "pass",
+   "detail": ""
+  },
+  {
+   "check": "conflict fixture: plan blocked (exit 2, 2 conflicts)",
+   "result": "pass",
+   "detail": ""
+  },
+  {
+   "check": "conflict fixture: apply refused (exit 2)",
+   "result": "pass",
+   "detail": ""
+  },
+  {
+   "check": "conflict fixture: nothing changed",
+   "result": "pass",
+   "detail": ""
+  }
+ ]
+}

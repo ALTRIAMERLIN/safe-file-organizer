@@ -1,0 +1,18 @@
+pass  fixture has 36 files  [36]
+pass  fixture SHA-256 matches frozen expectation
+pass  installed CLI runs  [fileorganizer 1.0.0]
+pass  plan exit 0
+pass  preview 36 ready / 0 conflict  [{"total": 37, "ready": 36, "conflict": 0, "skipped": 1, "to_move": 36, "no_op": 0}]
+pass  plan mapping equals independent frozen mapping
+pass  preview changed nothing
+pass  apply exit 0, 36 done
+pass  every target exists with the planned SHA-256
+pass  history shows 1 completed run, 36 moved
+pass  journal: 36 intent + 36 done
+pass  undo exit 0, 36 restored
+pass  after undo: all original paths and SHA-256 restored
+pass  Organized folders created by the run were removed
+pass  conflict fixture: plan blocked (exit 2, 2 conflicts)
+pass  conflict fixture: apply refused (exit 2)
+pass  conflict fixture: nothing changed
+17/17 checks passed. Manifest: [MASKED]\demo_out\manifest.json

@@ -28,4 +28,17 @@ docs/REQUIREMENTS.md, docs/DESIGN.md, docs/TASKS.md written from docs/SPEC.md be
 - Command: `python -m pytest -q tests` -> 138 passed.
 - Not verified in this stage: A27 (a person operating the real window, plus screenshots) belongs to the stage 6 material and was not done. The UI tests drive real widgets but do not click native dialogs (folder picker, confirm box, save dialog).
 
-Latest result: 138 passed.
+## Stage 5 - Windows clean install + full acceptance (done, with open items)
+- Added: README draft (EN), `docs/START_zh.md`, `tools/run_demo_check.py` (full demo via the CLI, writes a masked manifest), simulated cross-volume test for A12.
+- Clean install of commit `3529669` in a new folder: `git clone` -> new venv -> `pip install .` -> `pip install -r requirements-dev.txt`.
+  - `python -m pytest -v -rA -p no:cacheprovider tests --junitxml=junit.xml` -> **139 passed, 0 failed, 0 skipped**.
+  - `fileorganizer.exe --version` -> 1.0.0; `tools/run_demo_check.py` against the installed package -> 17/17 checks (36 ready/0 conflict, 36 moved, journal 36 intent + 36 done, 36 restored, tree + SHA-256 identical to the original, conflict fixture blocked and untouched).
+- Evidence: `docs/TEST_REPORT.md`, `docs/ACCEPTANCE.md` (A01-A27), `docs/evidence/` (pytest log, junit.xml, demo log, demo manifest; local paths, user name and host name masked).
+- Not verified / open:
+  - **A27 not verified**: a person operating the real window, with screenshots matched to logs and disk state. This is stage 6 material, which TASK.md excludes this round.
+  - **A12 cross-volume is simulated only**: this machine has no second local NTFS volume (G: is a FAT32 Google Drive sync drive; Z: has 0 free). File symlinks (`mklink` without `/J`) are not tested separately; junctions and hard links are tested for real.
+  - Permission failures (A17) and journal disk failures (A18) are injected; real ACL denial and a real full disk were not tested.
+  - setuptools build-backend version not pinned or recorded.
+- Release gate (spec section 8) is **not met** until A27 is done.
+
+Latest result: 139 passed (clean install, commit 3529669).

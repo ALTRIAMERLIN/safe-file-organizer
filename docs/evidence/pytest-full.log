@@ -1,0 +1,289 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-8.3.4, pluggy-1.7.0 -- [MASKED]\.venv\Scripts\python.exe
+rootdir: [MASKED]
+configfile: pyproject.toml
+collecting ... collected 139 items
+
+tests/test_cli.py::test_A25_cli_demo_main_flow PASSED                    [  0%]
+tests/test_cli.py::test_A25_cli_blocked_plan_exit_2_and_cannot_apply PASSED [  1%]
+tests/test_cli.py::test_A25_cli_usage_and_preflight_errors_exit_2[args0-required] PASSED [  2%]
+tests/test_cli.py::test_A25_cli_usage_and_preflight_errors_exit_2[args1-invalid choice] PASSED [  2%]
+tests/test_cli.py::test_A25_cli_usage_and_preflight_errors_exit_2[args2-Folder not found] PASSED [  3%]
+tests/test_cli.py::test_A25_cli_usage_and_preflight_errors_exit_2[args3-Plan file not found] PASSED [  4%]
+tests/test_cli.py::test_A25_cli_usage_and_preflight_errors_exit_2[args4-Run not found] PASSED [  5%]
+tests/test_cli.py::test_A25_cli_usage_and_preflight_errors_exit_2[args5-Folder not found] PASSED [  5%]
+tests/test_cli.py::test_A25_cli_bad_rules_and_output_inside_root_exit_2 PASSED [  6%]
+tests/test_cli.py::test_A25_cli_tampered_plan_exit_2 PASSED              [  7%]
+tests/test_cli.py::test_A25_cli_lock_busy_exit_2 PASSED                  [  7%]
+tests/test_cli.py::test_A25_cli_failure_during_execution_exit_3 PASSED   [  8%]
+tests/test_cli.py::test_A25_cli_needs_review_exit_3_and_blocks_new_work PASSED [  9%]
+tests/test_cli.py::test_A25_cli_unexpected_error_exit_1_without_traceback PASSED [ 10%]
+tests/test_cli.py::test_cli_help_and_version PASSED                      [ 10%]
+tests/test_fixtures.py::test_fixture_composition PASSED                  [ 11%]
+tests/test_fixtures.py::test_demo_plan_matches_independent_expectation PASSED [ 12%]
+tests/test_fixtures.py::test_conflict_fixture_is_blocked PASSED          [ 12%]
+tests/test_fixtures.py::test_generator_never_overwrites_and_reset_is_scoped PASSED [ 13%]
+tests/test_planning.py::test_A01_default_first_level_only PASSED         [ 14%]
+tests/test_planning.py::test_A01_recursive_switch PASSED                 [ 15%]
+tests/test_planning.py::test_A01_extension_filter_case_insensitive PASSED [ 15%]
+tests/test_planning.py::test_A01_unreadable_file_listed_not_ignored PASSED [ 16%]
+tests/test_planning.py::test_A02_special_names PASSED                    [ 17%]
+tests/test_planning.py::test_A02_extension_case_preserved PASSED         [ 17%]
+tests/test_planning.py::test_A03_fixed_order_replace_prefix_suffix_number PASSED [ 18%]
+tests/test_planning.py::test_A03_replace_is_literal_case_sensitive PASSED [ 19%]
+tests/test_planning.py::test_A03_empty_find_illegal PASSED               [ 20%]
+tests/test_planning.py::test_A03_numbering_order_casefold_then_original PASSED [ 20%]
+tests/test_planning.py::test_A03_1000_files_unique_not_truncated PASSED  [ 21%]
+tests/test_planning.py::test_A04_classify_by_extension PASSED            [ 22%]
+tests/test_planning.py::test_A05_month_is_utc[2025-12-31T23:30:00-2025-12] PASSED [ 23%]
+tests/test_planning.py::test_A05_month_is_utc[2026-01-01T00:00:00-2026-01] PASSED [ 23%]
+tests/test_planning.py::test_A05_month_is_utc[2026-01-31T23:59:59-2026-01] PASSED [ 24%]
+tests/test_planning.py::test_A05_month_is_utc[2026-02-01T00:00:00-2026-02] PASSED [ 25%]
+tests/test_planning.py::test_A05_month_is_utc[2024-02-29T12:00:00-2024-02] PASSED [ 25%]
+tests/test_planning.py::test_A06_no_classify_keeps_parent_and_flatten_conflicts PASSED [ 26%]
+tests/test_planning.py::test_A07_preview_does_not_touch_source PASSED    [ 27%]
+tests/test_planning.py::test_A07_plan_cannot_be_written_inside_root PASSED [ 28%]
+tests/test_planning.py::test_A08_deterministic_mapping PASSED            [ 28%]
+tests/test_planning.py::test_A08_empty_rules_and_empty_folder_are_explainable_noops PASSED [ 29%]
+tests/test_planning.py::test_A08_export_csv_json PASSED                  [ 30%]
+tests/test_planning.py::test_A09_existing_target_and_batch_duplicates_block PASSED [ 30%]
+tests/test_planning.py::test_A09_batch_duplicate_targets_block_all_involved PASSED [ 31%]
+tests/test_planning.py::test_A10_invalid_windows_names_block[x-CON-reserved] PASSED [ 32%]
+tests/test_planning.py::test_A10_invalid_windows_names_block[x-aux-reserved] PASSED [ 33%]
+tests/test_planning.py::test_A10_invalid_windows_names_block[x-a:b-illegal character] PASSED [ 33%]
+tests/test_planning.py::test_A10_invalid_windows_names_block[x-a?b-illegal character] PASSED [ 34%]
+tests/test_planning.py::test_A10_invalid_windows_names_block[x-a<b-illegal character] PASSED [ 35%]
+tests/test_planning.py::test_A10_trailing_dot_or_space_block[.] PASSED   [ 35%]
+tests/test_planning.py::test_A10_trailing_dot_or_space_block[ ] PASSED   [ 36%]
+tests/test_planning.py::test_A10_case_only_rename_blocked PASSED         [ 37%]
+tests/test_planning.py::test_A10_case_insensitive_collisions_block PASSED [ 38%]
+tests/test_planning.py::test_A10_same_target_differing_only_by_case PASSED [ 38%]
+tests/test_planning.py::test_A10_empty_new_name_blocks PASSED            [ 39%]
+tests/test_planning.py::test_A11_swap_and_cycle_rejected PASSED          [ 40%]
+tests/test_planning.py::test_A11_parent_path_is_file_rejected PASSED     [ 41%]
+tests/test_planning.py::test_A11_long_path_precheck_fails_clearly PASSED [ 41%]
+tests/test_planning.py::test_A12_boundary_escape_in_tampered_plan[../evil.txt] PASSED [ 42%]
+tests/test_planning.py::test_A12_boundary_escape_in_tampered_plan[..\\evil.txt] PASSED [ 43%]
+tests/test_planning.py::test_A12_boundary_escape_in_tampered_plan[C:/evil.txt] PASSED [ 43%]
+tests/test_planning.py::test_A12_boundary_escape_in_tampered_plan[/evil.txt] PASSED [ 44%]
+tests/test_planning.py::test_A12_boundary_escape_in_tampered_plan[a/../../e.txt] PASSED [ 45%]
+tests/test_planning.py::test_A12_boundary_escape_in_tampered_plan[sub//x.txt] PASSED [ 46%]
+tests/test_planning.py::test_A12_boundary_escape_in_tampered_plan[CON.txt] PASSED [ 46%]
+tests/test_planning.py::test_A12_boundary_escape_in_tampered_plan[x/./y.txt] PASSED [ 47%]
+tests/test_planning.py::test_A12_tampered_plan_digest_detected PASSED    [ 48%]
+tests/test_planning.py::test_A12_malformed_plan_files PASSED             [ 48%]
+tests/test_planning.py::test_A12_plan_roundtrip_through_file PASSED      [ 49%]
+tests/test_planning.py::test_A12_junction_and_hardlink_never_included PASSED [ 50%]
+tests/test_planning.py::test_A12_root_that_is_a_junction_is_refused PASSED [ 51%]
+tests/test_planning.py::test_A12_target_through_junction_rejected PASSED [ 51%]
+tests/test_planning.py::test_A12_organized_link_refused PASSED           [ 52%]
+tests/test_planning.py::test_A12_target_on_different_volume_rejected_SIMULATED PASSED [ 53%]
+tests/test_planning.py::test_rules_strict_parsing PASSED                 [ 53%]
+tests/test_runs.py::test_A13_same_size_content_change_detected_even_with_same_mtime PASSED [ 54%]
+tests/test_runs.py::test_A13_source_deleted PASSED                       [ 55%]
+tests/test_runs.py::test_A13_source_replaced_by_identical_copy PASSED    [ 56%]
+tests/test_runs.py::test_A13_target_created_after_preview PASSED         [ 56%]
+tests/test_runs.py::test_A13_second_apply_of_same_plan_moves_nothing PASSED [ 57%]
+tests/test_runs.py::test_A15_A20_demo_apply_verify_undo_full_restore PASSED [ 58%]
+tests/test_runs.py::test_A15_noop_and_skipped_untouched PASSED           [ 58%]
+tests/test_runs.py::test_A15_mixed_plan_only_moves_ready_items PASSED    [ 59%]
+tests/test_runs.py::test_A16_target_inserted_at_last_moment_is_never_overwritten PASSED [ 60%]
+tests/test_runs.py::test_A16_os_rename_semantics_refuse_overwrite PASSED [ 61%]
+tests/test_runs.py::test_A17_injected_failure_at_item_n PASSED           [ 61%]
+tests/test_runs.py::test_A17_real_locked_file_stops_the_run PASSED       [ 62%]
+tests/test_runs.py::test_A18_unwritable_log_dir_means_zero_moves PASSED  [ 63%]
+tests/test_runs.py::test_A18_first_journal_write_fails_zero_moves PASSED [ 64%]
+tests/test_runs.py::test_A18_midrun_journal_failure_stops_and_recovery_reconciles PASSED [ 64%]
+tests/test_runs.py::test_A18_journal_fails_before_intent_stops_before_that_move PASSED [ 65%]
+tests/test_runs.py::test_A19_kill_after_intent_before_move PASSED        [ 66%]
+tests/test_runs.py::test_A19_kill_after_move_before_done PASSED          [ 66%]
+tests/test_runs.py::test_A19_kill_after_done PASSED                      [ 67%]
+tests/test_runs.py::test_A19_kill_after_last_done_reconciles_to_completed PASSED [ 68%]
+tests/test_runs.py::test_A19_ambiguity_both_locations_needs_review PASSED [ 69%]
+tests/test_runs.py::test_A19_ambiguity_neither_location_needs_review PASSED [ 69%]
+tests/test_runs.py::test_A19_ambiguity_content_mismatch_needs_review PASSED [ 70%]
+tests/test_runs.py::test_A19_needs_review_stays_when_user_recreates_file_with_different_identity PASSED [ 71%]
+tests/test_runs.py::test_A19_needs_review_resolves_when_original_is_put_back_exactly PASSED [ 71%]
+tests/test_runs.py::test_A19_torn_journal_line_is_tolerated PASSED       [ 72%]
+tests/test_runs.py::test_A20_undo_preserves_preexisting_dirs PASSED      [ 73%]
+tests/test_runs.py::test_A20_created_dir_with_foreign_file_is_kept PASSED [ 74%]
+tests/test_runs.py::test_A21_target_modified PASSED                      [ 74%]
+tests/test_runs.py::test_A21_target_replaced_same_content PASSED         [ 75%]
+tests/test_runs.py::test_A21_target_missing PASSED                       [ 76%]
+tests/test_runs.py::test_A21_original_location_occupied PASSED           [ 76%]
+tests/test_runs.py::test_A22_partial_run_undoes_only_successes_and_repeat_is_noop PASSED [ 77%]
+tests/test_runs.py::test_A22_only_latest_batch_can_be_undone PASSED      [ 78%]
+tests/test_runs.py::test_A23_undo_fails_at_item_n_then_retry_does_not_repeat PASSED [ 79%]
+tests/test_runs.py::test_A23_undo_process_killed_then_reconciled_and_retried PASSED [ 79%]
+tests/test_runs.py::test_A23_undo_killed_after_intent PASSED             [ 80%]
+tests/test_runs.py::test_A24_lock_excludes_second_holder_in_process PASSED [ 81%]
+tests/test_runs.py::test_A24_two_processes_only_one_executes PASSED      [ 82%]
+tests/test_runs.py::test_A24_lock_released_when_process_killed PASSED    [ 82%]
+tests/test_runs.py::test_A24_lock_is_per_root PASSED                     [ 83%]
+tests/test_runs.py::test_A24_threads_double_submit_moves_once PASSED     [ 84%]
+tests/test_ui.py::test_A14_apply_disabled_until_valid_preview PASSED     [ 84%]
+tests/test_ui.py::test_A14_rule_change_invalidates_preview_and_apply_does_nothing PASSED [ 85%]
+tests/test_ui.py::test_A14_every_rule_input_invalidates[find_var-a] PASSED [ 86%]
+tests/test_ui.py::test_A14_every_rule_input_invalidates[replace_var-z] PASSED [ 87%]
+tests/test_ui.py::test_A14_every_rule_input_invalidates[numbering_var-True] PASSED [ 87%]
+tests/test_ui.py::test_A14_every_rule_input_invalidates[digits_var-4] PASSED [ 88%]
+tests/test_ui.py::test_A14_every_rule_input_invalidates[classify_var-month] PASSED [ 89%]
+tests/test_ui.py::test_A14_every_rule_input_invalidates[recursive_var-True] PASSED [ 89%]
+tests/test_ui.py::test_A14_every_rule_input_invalidates[ext_var-pdf] PASSED [ 90%]
+tests/test_ui.py::test_A14_folder_change_invalidates_preview PASSED      [ 91%]
+tests/test_ui.py::test_A14_preview_finishing_after_a_rule_change_is_discarded PASSED [ 92%]
+tests/test_ui.py::test_A14_double_click_apply_moves_once PASSED          [ 92%]
+tests/test_ui.py::test_A14_cancel_in_confirm_moves_nothing PASSED        [ 93%]
+tests/test_ui.py::test_A14_busy_disables_rule_editing_and_resubmit PASSED [ 94%]
+tests/test_ui.py::test_A14_conflict_disables_apply PASSED                [ 94%]
+tests/test_ui.py::test_A14_second_instance_cannot_repeat_the_move PASSED [ 95%]
+tests/test_ui.py::test_A14_lock_held_by_other_instance_shows_error PASSED [ 96%]
+tests/test_ui.py::test_ui_rule_error_shown_in_plain_english PASSED       [ 97%]
+tests/test_ui.py::test_ui_export_refuses_inside_root PASSED              [ 97%]
+tests/test_ui.py::test_ui_demo_main_flow_preview_apply_history_undo PASSED [ 98%]
+tests/test_ui.py::test_ui_shows_needs_review_after_interrupted_run PASSED [ 99%]
+tests/test_ui.py::test_A25_cli_and_ui_same_mapping_and_result PASSED     [100%]
+
+=================================== PASSES ====================================
+- generated xml file: [MASKED]\junit.xml -
+=========================== short test summary info ===========================
+PASSED tests/test_cli.py::test_A25_cli_demo_main_flow
+PASSED tests/test_cli.py::test_A25_cli_blocked_plan_exit_2_and_cannot_apply
+PASSED tests/test_cli.py::test_A25_cli_usage_and_preflight_errors_exit_2[args0-required]
+PASSED tests/test_cli.py::test_A25_cli_usage_and_preflight_errors_exit_2[args1-invalid choice]
+PASSED tests/test_cli.py::test_A25_cli_usage_and_preflight_errors_exit_2[args2-Folder not found]
+PASSED tests/test_cli.py::test_A25_cli_usage_and_preflight_errors_exit_2[args3-Plan file not found]
+PASSED tests/test_cli.py::test_A25_cli_usage_and_preflight_errors_exit_2[args4-Run not found]
+PASSED tests/test_cli.py::test_A25_cli_usage_and_preflight_errors_exit_2[args5-Folder not found]
+PASSED tests/test_cli.py::test_A25_cli_bad_rules_and_output_inside_root_exit_2
+PASSED tests/test_cli.py::test_A25_cli_tampered_plan_exit_2
+PASSED tests/test_cli.py::test_A25_cli_lock_busy_exit_2
+PASSED tests/test_cli.py::test_A25_cli_failure_during_execution_exit_3
+PASSED tests/test_cli.py::test_A25_cli_needs_review_exit_3_and_blocks_new_work
+PASSED tests/test_cli.py::test_A25_cli_unexpected_error_exit_1_without_traceback
+PASSED tests/test_cli.py::test_cli_help_and_version
+PASSED tests/test_fixtures.py::test_fixture_composition
+PASSED tests/test_fixtures.py::test_demo_plan_matches_independent_expectation
+PASSED tests/test_fixtures.py::test_conflict_fixture_is_blocked
+PASSED tests/test_fixtures.py::test_generator_never_overwrites_and_reset_is_scoped
+PASSED tests/test_planning.py::test_A01_default_first_level_only
+PASSED tests/test_planning.py::test_A01_recursive_switch
+PASSED tests/test_planning.py::test_A01_extension_filter_case_insensitive
+PASSED tests/test_planning.py::test_A01_unreadable_file_listed_not_ignored
+PASSED tests/test_planning.py::test_A02_special_names
+PASSED tests/test_planning.py::test_A02_extension_case_preserved
+PASSED tests/test_planning.py::test_A03_fixed_order_replace_prefix_suffix_number
+PASSED tests/test_planning.py::test_A03_replace_is_literal_case_sensitive
+PASSED tests/test_planning.py::test_A03_empty_find_illegal
+PASSED tests/test_planning.py::test_A03_numbering_order_casefold_then_original
+PASSED tests/test_planning.py::test_A03_1000_files_unique_not_truncated
+PASSED tests/test_planning.py::test_A04_classify_by_extension
+PASSED tests/test_planning.py::test_A05_month_is_utc[2025-12-31T23:30:00-2025-12]
+PASSED tests/test_planning.py::test_A05_month_is_utc[2026-01-01T00:00:00-2026-01]
+PASSED tests/test_planning.py::test_A05_month_is_utc[2026-01-31T23:59:59-2026-01]
+PASSED tests/test_planning.py::test_A05_month_is_utc[2026-02-01T00:00:00-2026-02]
+PASSED tests/test_planning.py::test_A05_month_is_utc[2024-02-29T12:00:00-2024-02]
+PASSED tests/test_planning.py::test_A06_no_classify_keeps_parent_and_flatten_conflicts
+PASSED tests/test_planning.py::test_A07_preview_does_not_touch_source
+PASSED tests/test_planning.py::test_A07_plan_cannot_be_written_inside_root
+PASSED tests/test_planning.py::test_A08_deterministic_mapping
+PASSED tests/test_planning.py::test_A08_empty_rules_and_empty_folder_are_explainable_noops
+PASSED tests/test_planning.py::test_A08_export_csv_json
+PASSED tests/test_planning.py::test_A09_existing_target_and_batch_duplicates_block
+PASSED tests/test_planning.py::test_A09_batch_duplicate_targets_block_all_involved
+PASSED tests/test_planning.py::test_A10_invalid_windows_names_block[x-CON-reserved]
+PASSED tests/test_planning.py::test_A10_invalid_windows_names_block[x-aux-reserved]
+PASSED tests/test_planning.py::test_A10_invalid_windows_names_block[x-a:b-illegal character]
+PASSED tests/test_planning.py::test_A10_invalid_windows_names_block[x-a?b-illegal character]
+PASSED tests/test_planning.py::test_A10_invalid_windows_names_block[x-a<b-illegal character]
+PASSED tests/test_planning.py::test_A10_trailing_dot_or_space_block[.]
+PASSED tests/test_planning.py::test_A10_trailing_dot_or_space_block[ ]
+PASSED tests/test_planning.py::test_A10_case_only_rename_blocked
+PASSED tests/test_planning.py::test_A10_case_insensitive_collisions_block
+PASSED tests/test_planning.py::test_A10_same_target_differing_only_by_case
+PASSED tests/test_planning.py::test_A10_empty_new_name_blocks
+PASSED tests/test_planning.py::test_A11_swap_and_cycle_rejected
+PASSED tests/test_planning.py::test_A11_parent_path_is_file_rejected
+PASSED tests/test_planning.py::test_A11_long_path_precheck_fails_clearly
+PASSED tests/test_planning.py::test_A12_boundary_escape_in_tampered_plan[../evil.txt]
+PASSED tests/test_planning.py::test_A12_boundary_escape_in_tampered_plan[..\\evil.txt]
+PASSED tests/test_planning.py::test_A12_boundary_escape_in_tampered_plan[C:/evil.txt]
+PASSED tests/test_planning.py::test_A12_boundary_escape_in_tampered_plan[/evil.txt]
+PASSED tests/test_planning.py::test_A12_boundary_escape_in_tampered_plan[a/../../e.txt]
+PASSED tests/test_planning.py::test_A12_boundary_escape_in_tampered_plan[sub//x.txt]
+PASSED tests/test_planning.py::test_A12_boundary_escape_in_tampered_plan[CON.txt]
+PASSED tests/test_planning.py::test_A12_boundary_escape_in_tampered_plan[x/./y.txt]
+PASSED tests/test_planning.py::test_A12_tampered_plan_digest_detected
+PASSED tests/test_planning.py::test_A12_malformed_plan_files
+PASSED tests/test_planning.py::test_A12_plan_roundtrip_through_file
+PASSED tests/test_planning.py::test_A12_junction_and_hardlink_never_included
+PASSED tests/test_planning.py::test_A12_root_that_is_a_junction_is_refused
+PASSED tests/test_planning.py::test_A12_target_through_junction_rejected
+PASSED tests/test_planning.py::test_A12_organized_link_refused
+PASSED tests/test_planning.py::test_A12_target_on_different_volume_rejected_SIMULATED
+PASSED tests/test_planning.py::test_rules_strict_parsing
+PASSED tests/test_runs.py::test_A13_same_size_content_change_detected_even_with_same_mtime
+PASSED tests/test_runs.py::test_A13_source_deleted
+PASSED tests/test_runs.py::test_A13_source_replaced_by_identical_copy
+PASSED tests/test_runs.py::test_A13_target_created_after_preview
+PASSED tests/test_runs.py::test_A13_second_apply_of_same_plan_moves_nothing
+PASSED tests/test_runs.py::test_A15_A20_demo_apply_verify_undo_full_restore
+PASSED tests/test_runs.py::test_A15_noop_and_skipped_untouched
+PASSED tests/test_runs.py::test_A15_mixed_plan_only_moves_ready_items
+PASSED tests/test_runs.py::test_A16_target_inserted_at_last_moment_is_never_overwritten
+PASSED tests/test_runs.py::test_A16_os_rename_semantics_refuse_overwrite
+PASSED tests/test_runs.py::test_A17_injected_failure_at_item_n
+PASSED tests/test_runs.py::test_A17_real_locked_file_stops_the_run
+PASSED tests/test_runs.py::test_A18_unwritable_log_dir_means_zero_moves
+PASSED tests/test_runs.py::test_A18_first_journal_write_fails_zero_moves
+PASSED tests/test_runs.py::test_A18_midrun_journal_failure_stops_and_recovery_reconciles
+PASSED tests/test_runs.py::test_A18_journal_fails_before_intent_stops_before_that_move
+PASSED tests/test_runs.py::test_A19_kill_after_intent_before_move
+PASSED tests/test_runs.py::test_A19_kill_after_move_before_done
+PASSED tests/test_runs.py::test_A19_kill_after_done
+PASSED tests/test_runs.py::test_A19_kill_after_last_done_reconciles_to_completed
+PASSED tests/test_runs.py::test_A19_ambiguity_both_locations_needs_review
+PASSED tests/test_runs.py::test_A19_ambiguity_neither_location_needs_review
+PASSED tests/test_runs.py::test_A19_ambiguity_content_mismatch_needs_review
+PASSED tests/test_runs.py::test_A19_needs_review_stays_when_user_recreates_file_with_different_identity
+PASSED tests/test_runs.py::test_A19_needs_review_resolves_when_original_is_put_back_exactly
+PASSED tests/test_runs.py::test_A19_torn_journal_line_is_tolerated
+PASSED tests/test_runs.py::test_A20_undo_preserves_preexisting_dirs
+PASSED tests/test_runs.py::test_A20_created_dir_with_foreign_file_is_kept
+PASSED tests/test_runs.py::test_A21_target_modified
+PASSED tests/test_runs.py::test_A21_target_replaced_same_content
+PASSED tests/test_runs.py::test_A21_target_missing
+PASSED tests/test_runs.py::test_A21_original_location_occupied
+PASSED tests/test_runs.py::test_A22_partial_run_undoes_only_successes_and_repeat_is_noop
+PASSED tests/test_runs.py::test_A22_only_latest_batch_can_be_undone
+PASSED tests/test_runs.py::test_A23_undo_fails_at_item_n_then_retry_does_not_repeat
+PASSED tests/test_runs.py::test_A23_undo_process_killed_then_reconciled_and_retried
+PASSED tests/test_runs.py::test_A23_undo_killed_after_intent
+PASSED tests/test_runs.py::test_A24_lock_excludes_second_holder_in_process
+PASSED tests/test_runs.py::test_A24_two_processes_only_one_executes
+PASSED tests/test_runs.py::test_A24_lock_released_when_process_killed
+PASSED tests/test_runs.py::test_A24_lock_is_per_root
+PASSED tests/test_runs.py::test_A24_threads_double_submit_moves_once
+PASSED tests/test_ui.py::test_A14_apply_disabled_until_valid_preview
+PASSED tests/test_ui.py::test_A14_rule_change_invalidates_preview_and_apply_does_nothing
+PASSED tests/test_ui.py::test_A14_every_rule_input_invalidates[find_var-a]
+PASSED tests/test_ui.py::test_A14_every_rule_input_invalidates[replace_var-z]
+PASSED tests/test_ui.py::test_A14_every_rule_input_invalidates[numbering_var-True]
+PASSED tests/test_ui.py::test_A14_every_rule_input_invalidates[digits_var-4]
+PASSED tests/test_ui.py::test_A14_every_rule_input_invalidates[classify_var-month]
+PASSED tests/test_ui.py::test_A14_every_rule_input_invalidates[recursive_var-True]
+PASSED tests/test_ui.py::test_A14_every_rule_input_invalidates[ext_var-pdf]
+PASSED tests/test_ui.py::test_A14_folder_change_invalidates_preview
+PASSED tests/test_ui.py::test_A14_preview_finishing_after_a_rule_change_is_discarded
+PASSED tests/test_ui.py::test_A14_double_click_apply_moves_once
+PASSED tests/test_ui.py::test_A14_cancel_in_confirm_moves_nothing
+PASSED tests/test_ui.py::test_A14_busy_disables_rule_editing_and_resubmit
+PASSED tests/test_ui.py::test_A14_conflict_disables_apply
+PASSED tests/test_ui.py::test_A14_second_instance_cannot_repeat_the_move
+PASSED tests/test_ui.py::test_A14_lock_held_by_other_instance_shows_error
+PASSED tests/test_ui.py::test_ui_rule_error_shown_in_plain_english
+PASSED tests/test_ui.py::test_ui_export_refuses_inside_root
+PASSED tests/test_ui.py::test_ui_demo_main_flow_preview_apply_history_undo
+PASSED tests/test_ui.py::test_ui_shows_needs_review_after_interrupted_run
+PASSED tests/test_ui.py::test_A25_cli_and_ui_same_mapping_and_result
+============================ 139 passed in 12.45s =============================
