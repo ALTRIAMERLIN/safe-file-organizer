@@ -15,7 +15,7 @@ from typing import Any
 from . import names
 from .errors import PreflightError, RuleError
 from .rules import Rules
-from .scanner import ORGANIZED, Entry, ext_of, scan
+from .scanner import ORGANIZED, ext_of, scan
 
 SCHEMA_VERSION = 1
 ACTIONS = ("rename", "move", "move_and_rename", "no_op")
@@ -147,17 +147,14 @@ def _split_dir(rel: str) -> tuple[str, str]:
     return ("", rel) if i < 0 else (rel[:i], rel[i + 1:])
 
 
-def make_plan(root: str, rules: Rules, state_dir: str | None = None,
-              entries: list[Entry] | None = None) -> Plan:
+def make_plan(root: str, rules: Rules, state_dir: str | None = None) -> Plan:
     rules.validate()
     root = names.check_root_dir(root)
     if rules.classify != "none":
         org = os.path.join(root, ORGANIZED)
         if os.path.lexists(org) and names.is_link(org):
             raise PreflightError("The 'Organized' folder is a link/junction. Remove or rename it, then preview again.")
-    if entries is None:
-        entries = scan(root, rules, state_dir)
-    entries = sorted(entries, key=lambda e: (e.rel.casefold(), e.rel))
+    entries = sorted(scan(root, rules, state_dir), key=lambda e: (e.rel.casefold(), e.rel))
     included = [e for e in entries if e.status == "included"]
     number = {e.rel: n for n, e in enumerate(included, start=1)}  # already in (casefold, rel) order
 
@@ -174,6 +171,7 @@ def make_plan(root: str, rules: Rules, state_dir: str | None = None,
             continue
         src_dir, name = _split_dir(e.rel)
         stem, ext = ext_of(name)
+        orig_stem = stem
         if rules.find:
             stem = stem.replace(rules.find, rules.replace)
         main = rules.prefix + stem + rules.suffix
@@ -181,7 +179,7 @@ def make_plan(root: str, rules: Rules, state_dir: str | None = None,
             main += f"_{number[e.rel]:0{rules.digits}d}"
         new_name = main if ext is None else f"{main}.{ext}"
         idx = len(items)
-        if main == "":
+        if main == "" and orig_stem != "":  # dotfiles (".env") legitimately have an empty stem
             pre[idx] = "new file name would be empty"
         if rules.classify == "extension":
             sub = "no_extension" if not ext else ext.lower()
@@ -275,6 +273,13 @@ def save_plan(plan: Plan, path: str, overwrite: bool = False) -> None:
     _write_new(path, data, overwrite)
 
 
+def _csv_safe(v: Any) -> Any:
+    """Neutralize spreadsheet formula injection: prefix risky text cells with an apostrophe."""
+    if isinstance(v, str) and v[:1] in ("=", "+", "-", "@", "\t", "\r"):
+        return "\x27" + v
+    return v
+
+
 def export_csv(plan: Plan, path: str, overwrite: bool = False) -> None:
     _check_outside_root(plan, path)
     import io
@@ -282,7 +287,7 @@ def export_csv(plan: Plan, path: str, overwrite: bool = False) -> None:
     w = csv.writer(buf, lineterminator="\r\n")
     w.writerow(["source", "target", "action", "status", "reason", "size", "sha256"])
     for i in plan.items:
-        w.writerow([i.src, i.dst, i.action, i.status, i.reason, i.size, i.sha256])
+        w.writerow([_csv_safe(c) for c in (i.src, i.dst, i.action, i.status, i.reason, i.size, i.sha256)])
     _write_new(path, buf.getvalue().encode("utf-8-sig"), overwrite)  # BOM so Excel shows CJK correctly
 
 
