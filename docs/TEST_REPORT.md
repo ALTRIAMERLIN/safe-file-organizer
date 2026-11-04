@@ -67,5 +67,9 @@ pytest 测的是克隆出的源码（`pyproject.toml` 里 `pythonpath = ["src"]`
 
 证据：`docs/evidence/a27/`（8 张截图、`a27_checks.json`、两份日志、`A27_SUMMARY.md`）。
 
-限制：截图未做目视逐张核对（此前两次读取图片时网络报错）；A27 的结论只依据磁盘与日志的机器核对。A12 跨卷仍只有模拟测试。
+截图核对（2026-11-04 补做）：8 张截图已逐张打开并与日志、冻结映射和机器核对对照，无矛盾（明细见 `docs/evidence/a27/A27_SUMMARY.md`）。显示问题：表格多数行不显示 `_`（行高裁切），磁盘上的名字正确，未改代码。
+
+补做时的重复测试（同日，`python -m pytest -q tests`，共 6 次）：3 次 **159 通过**；3 次 **158 通过 + 1 个错误**，每次都是 `tests/test_ui.py` 中某个用例在创建 `Tk()` 时 Tcl 初始化失败（`Can't find a usable init.tcl ...` 或 `invalid command name "tcl_findLibrary"`），不是断言失败；出错的用例不固定（记下名字的两次分别是 `test_A14_every_rule_input_invalidates[recursive_var-True]` 和 `test_A14_rule_change_invalidates_preview_and_apply_does_nothing`）。这是间歇性的环境问题（第 3 轮已记录过一次），未修复，未改测试。
+
+限制：A12 跨卷仍只有模拟测试。
 
