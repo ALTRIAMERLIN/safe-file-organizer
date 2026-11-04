@@ -37,7 +37,7 @@ afterwards and no frame was altered or inserted. All files in it are synthetic.
 
 | # | File | Note |
 |---|---|---|
-| 1 | `deliverables/cover.png` | Thumbnail, 2000x1500 (4:3; Upwork recommends 1000x750 or larger), drawn with text and shapes only |
+| 1 | `deliverables/cover.png` | Thumbnail, 2000x1500 (4:3; Upwork recommends 1000x750 or larger); the app panel is a crop of a real A27 screenshot (conflict preview) |
 | 2 | `video/out/safe-file-organizer-demo.mp4` | 59.77 s, 1920x1080, 30 fps, 2.4 MB (2,422,668 bytes), no audio, English captions |
 | 3 | Link | Not set: nothing has been published. Add the repository link only after the owner publishes it. |
 

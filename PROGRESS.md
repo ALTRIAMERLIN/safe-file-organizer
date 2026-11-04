@@ -81,4 +81,6 @@ Blocked items: none.
 Final test counts: 159 passed, 0 failed, 0 skipped (`python -m pytest -q tests`; 158 existing, 1 new). Single run, no Tk flake observed.
 
 ## Stage 6 - A27 real UI run and portfolio materials
-A27 passed 15/15 machine checks on the real window (see docs/DELIVERY.md and docs/evidence/a27/A27_SUMMARY.md). Raw recording, finished video, cover and Upwork draft produced. Visual review of screenshots, video and cover not done. src/ unchanged. Tests: 159 passed.
+A27 passed 15/15 machine checks on the real window (see docs/DELIVERY.md and docs/evidence/a27/A27_SUMMARY.md). Raw recording, finished video, cover and Upwork draft produced. src/ unchanged. Tests: 159 passed.
+
+Follow-up pass: all 8 A27 screenshots cross-checked against the journals and the frozen mapping (no contradiction; `_` not drawn on most table rows, display only). Finished video sampled at 13 timestamps, captions match the frames. Cover rebuilt in the csv-cover layout from a real screenshot. DELIVERY.md privacy note corrected (picker opens on an old sandbox, not Documents; Quick Access names are visible). Tests: 6 runs, 3 x 159 passed, 3 x 158 passed + 1 intermittent Tk init error in test_ui (environment, not fixed).
