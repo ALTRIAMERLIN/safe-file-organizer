@@ -1,6 +1,6 @@
-# Safe File Organizer (draft README)
+# Safe File Organizer
 
-> Personal demo project. All demo files are synthetic. Not published.
+> Personal demo project. All demo files are synthetic.
 
 Safe File Organizer renames and sorts the files in one folder on Windows. It always shows a preview first,
 moves files only after you confirm, writes a log before every move, and can undo the last run.
